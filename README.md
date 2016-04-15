@@ -1,1 +1,1 @@
-# Hackathon-2016-Serres-CodeBots-Team2
+# Hackathon-2016-Serres-CodeBots-Team
