@@ -15,9 +15,116 @@
 <body>
 
 	<?php 
-		
-	?>
 
+		//$user_id = $_SESSION["user_id"];
+		$user_id = 1;
+
+		
+
+		$high_achievements_query = "SELECT * FROM achievements WHERE user_id = '$user_id' AND achievement_prio LIKE '%High%'";
+		$high_achievements_response = mysqli_query($dbc, $high_achievements_query);
+
+		echo '<section id="high_priority_achievements">
+				<div class="container">
+					<div class="text-center"><h2><span style="background-color: #26A7DE; color: rgb(252, 191, 14); padding: 5px; padding-left: 15px; padding-right: 15px;"> High Priority Achievements! </span></h2></div><br/><br/>';
+
+		$counter = 1;		
+		while( $row = mysqli_fetch_array($high_achievements_response)) {
+
+				echo '<div class="row high_prio_achievements_container" id="high_prio_container_'.$counter.'">
+				<div class="arrow_container high_arrow_container hidden-xs">					
+					<span class="arrow high_arrow" id="high_arrow_'.$counter.'"></span>
+				</div>				
+				<div class="col-md-10 achievement_text_container">
+					<h3 class="achievement_title" id="high_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
+					<br/>
+					<p class="achievement_description" id="high_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+
+				</div>
+				<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 high_prio_achievements_image_wrapper"  id="high_prio_image_'.$counter.'">
+					<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
+				</div>				
+				</div>
+				<div class="row high_prio_achievements_footer" style="margin-top:0px;">
+					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
+					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+				</div>';
+
+				$counter++;		
+		}
+
+		echo '</div>
+			</section><br/><br/><br/>';
+
+		$medium_achievements_query = "SELECT * FROM achievements WHERE user_id = '$user_id' AND achievement_prio LIKE '%Medium%'";
+		$medium_achievements_response = mysqli_query($dbc, $medium_achievements_query);
+
+		echo '<section id="medium_priority_achievements">
+				<div class="container">
+					<div class="text-center"><h2><span style="background-color: rgb(101, 146, 30); color: rgb(255, 255, 255); padding: 5px; padding-left: 15px; padding-right: 15px;"> Medium Priority Achievements! </span></h2><br/><br/>';
+
+		$counter = 1;		
+		while( $row = mysqli_fetch_array($medium_achievements_response)) {
+
+				echo '<div class="row medium_prio_achievements_container" id="medium_prio_container_'.$counter.'">
+				<div class="arrow_container medium_arrow_container hidden-xs">					
+					<span class="arrow medium_arrow" id="medium_arrow_'.$counter.'"></span>
+				</div>
+				<div class="col-md-offset-0 col-md-10 achievement_text_container" >
+					<h3 class="achievement_title" id="medium_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
+					<br/>
+					<p class="achievement_description" id="medium_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+				</div>
+				<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 medium_prio_achievements_image_wrapper" id="medium_prio_image_'.$counter.'">
+					<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
+				</div>
+				</div>
+				<div class="row medium_prio_achievements_footer" style="margin-top:0px;">
+					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
+					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+				</div><br/><br/><br/>';
+
+				$counter++;		
+		}
+
+		echo '</div>
+			</section>';
+
+		$low_achievements_query = "SELECT * FROM achievements WHERE user_id = '$user_id' AND achievement_prio LIKE '%Low%'";
+		$low_achievements_response = mysqli_query($dbc, $low_achievements_query);
+
+		echo '<section id="low_priority_achievements">
+				<div class="container">
+					<div class="text-center"><h2><span style="background-color: rgb(43, 87, 112); color: rgb(198, 236, 248); padding: 5px; padding-left: 15px; padding-right: 15px;"> Low Priority Achievements! </span></h2><br/><br/>';
+
+		$counter = 1;		
+		while( $row = mysqli_fetch_array($low_achievements_response)) {
+
+				echo '<div class="row low_prio_achievements_container" id="low_prio_container_'.$counter.'">
+					<div class="arrow_container low_arrow_container hidden-xs">
+						<span class="arrow low_arrow" id="low_arrow_'.$counter.'"></span>
+					</div>
+					<div class="col-md-10 achievement_text_container">
+						<h3 class="achievement_title" id="low_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
+						<br/>
+					<p class="achievement_description" id="low_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+					</div>
+					<div class="col-md-1 low_prio_achievements_image_wrapper" id="low_prio_image_'.$counter.'">
+						<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
+					</div>
+				</div>
+				<div class="row low_prio_achievements_footer" style="margin-top:0px;">
+					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
+					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+				</div>';
+
+				$counter++;		
+		}
+		echo '</div>
+			</section>';
+		echo '<div id="container" style="margin: 20px; width: 200px; height: 200px; position: relative;"></div>';
+	?>
+<!--
 	<section id="high_priority_achievements">
 
 		<div class="container">
@@ -164,7 +271,7 @@
 				</div>
 
 		</div>
-	</section>
+	</section>-->
 
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
