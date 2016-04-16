@@ -53,7 +53,7 @@
 			echo "<hr>";
 			echo  '<p>'.$tag.'</p>' ;
 			echo "<hr>";
-			echo "<div class= 'clicked$id arrow-more$id' style='display:none;'>";
+			echo "<div class= 'extra clicked$id arrow-more$id' style='display:none;'>";
 			
 				echo "<p>".$name."</p>";
 				echo "<p>".$password."</p>";
