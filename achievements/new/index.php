@@ -30,11 +30,11 @@
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_title_div" style="margin-bottom:8px;">
 				<label for="achievement_title">Achievement Title <span class="superscript">*</span></label>
-				<input type="text" class="form-control" name="achievement_title" id="achievement_title" placeholder="" maxlength="50" value='<?php //echo "'".$_SESSION['surname']."'"; ?>' onblur="" required />
+				<input type="text" class="form-control" name="achievement_title" id="achievement_title" placeholder="This is my title" maxlength="50" value='<?php //echo "'".$_SESSION['surname']."'"; ?>' onblur="validateAchievementTitle(this);" required />
 			</div>
-			<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_progress" style="margin-bottom:8px;">
+			<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_progress_div" style="margin-bottom:8px;">
 				<label for="achievement_progress">Achievement Progress <span class="superscript">*</span></label>
-				<input type="text" class="form-control" name="achievement_progress" id="achievement_progress" placeholder="" maxlength="50" value='<?php //echo "'".$_SESSION['surname']."'"; ?>' onblur="" required />
+				<input type="text" class="form-control" name="achievement_progress" id="achievement_progress" placeholder="43.7%" maxlength="5" value='<?php //echo "'".$_SESSION['surname']."'"; ?>' onblur="validateAchievementPercentage(this);" required />
 			</div>			
 		</div>
 
@@ -43,7 +43,7 @@
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_description_div" style="margin-bottom:8px;">
 				<label for="achievement_description">Achievement Description <span class="superscript">*</span></label>
-				<textarea class="form-control" id="achievement_description" name="achievement_description" rows="10" required></textarea>
+				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" onblur="validateAchievementDescription(this);" required></textarea>
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center" id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>
