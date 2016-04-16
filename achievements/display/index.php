@@ -46,9 +46,18 @@
 				</div>				
 				</div>
 				<div class="row high_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success action_buttons" href="#">Display</a>
-					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
-					<a class="btn btn-danger action_buttons" href="#">Delete</a>
+					<form method="post" action="../display/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Display" class="btn btn-success action_buttons">
+					</form>
+					<form method="post" action="../edit/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Edit" class="btn btn-warning action_buttons">
+					</form>
+					<form method="post" action="../delete/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Delete" class="btn btn-danger action_buttons">
+					</form>
 				</div>';
 
 				$counter++;		
@@ -81,10 +90,20 @@
 				</div>
 				</div>
 				<div class="row medium_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success action_buttons" href="#">Display</a>
-					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
-					<a class="btn btn-danger action_buttons" href="#">Delete</a>
-				</div><br/><br/><br/>';
+					<form method="post" action="../display/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Display" class="btn btn-success action_buttons">
+					</form>
+					<form method="post" action="../edit/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Edit" class="btn btn-warning action_buttons">
+					</form>
+					<form method="post" action="../delete/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Delete" class="btn btn-danger action_buttons">
+					</form>
+				</div>
+				<br/><br/><br/>';
 
 				$counter++;		
 		}
@@ -116,9 +135,18 @@
 					</div>
 				</div>
 				<div class="row low_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success action_buttons" href="#">Display</a>
-					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
-					<a class="btn btn-danger action_buttons" href="#">Delete</a>
+					<form method="post" action="../display/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Display" class="btn btn-success action_buttons">
+					</form>
+					<form method="post" action="../edit/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Edit" class="btn btn-warning action_buttons">
+					</form>
+					<form method="post" action="../delete/index.php">
+						<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+						<input type="submit" value="Delete" class="btn btn-danger action_buttons">
+					</form>
 				</div>';
 
 				$counter++;		

@@ -53,15 +53,15 @@
 			$_POST["achievement_priority"] = "High";
 		} */
 
-		if(!isset($_POST["achievement_id"]) && false) {
+		if(!isset($_POST["achievement_id"])) {
 			
 			header("Location: ../../index.php");
 		
 		} else {
 
-			//$achievement_id = $_POST["achievement_id"];
+			$achievement_id = $_POST["achievement_id"];
 
-			$query = "SELECT * FROM achievements WHERE achievement_id = 1";
+			$query = "SELECT * FROM achievements WHERE achievement_id = '$achievement_id'";
 			$response = mysqli_query($dbc, $query);
 			
 			while ($row = mysqli_fetch_array($response)) {
@@ -77,7 +77,7 @@
 
 	<form method="post" action="dao/index.php">
 
-		<div class="row text-center"><h3> Create a new Achievement! </h3></div><br/><br/><br/>
+		<div class="row text-center"><h3> Edit your Achievement! </h3></div><br/><br/><br/>
 		<div class=<?php echo "'".$warning_div_class."'"; ?> >
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
 			<h4 class="text-center"> <?php echo $warning_message ?> </h4>
@@ -98,28 +98,28 @@
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_description_div" style="margin-bottom:8px;">
 				<label for="achievement_description">Achievement Description <span class="superscript">*</span></label>
-				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" onblur="validateAchievementDescription(this);" required><?php echo "'".$achievement_description."'"; ?></textarea>
+				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" onblur="validateAchievementDescription(this);" required><?php echo "$achievement_description"; ?></textarea>
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center " id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>
 				<select class="form-control" id="achievement_priority" name="achievement_priority">
 					<?php 
 
-						if($achievement_priority == "Low") {
+						if( strcmp($achievement_priority, "Low") ) {
 							echo "
 								<option value='Low' selected='selected'>Low</option>
 								<option value='Medium'>Medium</option>
 								<option value='High'>High</option>";
-						} else if ($achievement_priority == "Medium") {
+						} else if ( strcmp($achievement_priority, "Medium") ) {
 							echo "
 								<option value='Low'>Low</option>
 								<option value='Medium' selected='selected'>Medium</option>
 								<option value='High'>High</option>";
-						} else if ($achievement_priority == "High") {
+						} else if ( strcmp($achievement_priority, "High") ) {
 							echo "
 								<option value='Low'>Low</option>
 								<option value='Medium'>Medium</option>
-								<option value='High' selected='selected' >High</option>";
+								<option value='High' selected='selected'>High</option>";
 						} else {
 							echo "
 								<option value='Low'>Low</option>
@@ -128,6 +128,7 @@
 						}
 					?>
 				</select>
+
 			</div>
 		</div>
 		<br/><br/><br/>
