@@ -2,9 +2,14 @@
 
 	$(document).ready(function(){
 
-		$(".star").click(function(){
-				
-		});
+		
+	   $(".arrow").click(function(event) {
+      		var id = event.target.id;
+      		  
+      		
+      		  	$("."+id).stop().slideToggle("fast");
+   				 
+   		});	
 
 	
 	});                                                    

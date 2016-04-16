@@ -15,6 +15,7 @@
 	<body>
 	<h2>Store your favorite links</h2>
 		<div class="container margin-top animated zoomIn">
+		<a href="/Hackathon-2016-Serres-CodeBots-Team/favorites/edit/"><span  class="fa fa-pencil-square-o" aria-hidden="true">edit your favorite</span></a>
  <p></p>
 			<form action = "dao/index.php" method = "POST">
 
@@ -29,20 +30,21 @@
 					<textarea class="form-control" name ="description" rows="2"></textarea>
 				</div>
 
-				<div class="checkbox">
-				    <label>
-				      <input type="checkbox">foto
-				    </label>
-				</div>    
-<!-- 
-				<div id = "rating">
-					<p><label for="rate-it">rate it</label></p>
-					<span class="fa fa-star fa-2x rate-star" id="star1" aria-hidden="true"></span>
-					<span class="fa fa-star fa-2x rate-star" id="star2" aria-hidden="true"></span>
-					<span class="fa fa-star fa-2x rate-star" id="star3" aria-hidden="true"></span>
-					<span class="fa fa-star fa-2x rate-star" id="star4" aria-hidden="true"></span>
-					<span class="fa fa-star fa-2x rate-star" id="star5" aria-hidden="true"></span>
-				</div> -->
+				<div class="form-group">
+					<label for="tag-link">Add tag</label>
+					<input type="input" name= "tag-input" class="form-control" id="tag-input" placeholder="tag">
+				</div>
+
+				<div class="form-group">
+					<label for="username"username</label>
+					<input type="input" name= "user-input" class="form-control" id="username" placeholder="username">
+				</div>   
+
+				<div class="form-group">
+					<label for="password"username</label>
+					<input type="input" name= "password-input" class="form-control" id="password" placeholder="password">
+				</div>  
+
 			<div class="stars animated">
 			 
 			    <input class="star star-5 " id="star-5" type="radio" name="star" value ="5"/>

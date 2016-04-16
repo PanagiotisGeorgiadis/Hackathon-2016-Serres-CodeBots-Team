@@ -1,5 +1,4 @@
 ﻿<?php
 
-	require("home/index.php") ;
-
- ?>
+require ("home/index.php");
+?>

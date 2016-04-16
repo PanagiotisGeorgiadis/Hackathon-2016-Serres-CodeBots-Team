@@ -1,10 +1,6 @@
 ﻿<?php
 
-	require("header/index.php");
+require ("../header/index.php");
 
-
-
-
-	require("footer/index.php");
-
+require ("../footer/index.php");
 ?>
