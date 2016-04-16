@@ -12,6 +12,7 @@
 
 .achievement_text_container {
 	text-align: center;
+	z-index: 0;
 }
 
 .achievement_title {	
@@ -21,28 +22,68 @@
 }
 
 .achievement_description {
-	padding-left: 150px;
-	padding-right: 150px;
+	/*padding-left: 150px;
+	padding-right: 150px;*/
 }
 
 .low_prio_achievements_container {
-	height: 150px;
 	background-color: rgba(140,140,140, 0.3);
 	margin-bottom: 10px;
 }
 
 .medium_prio_achievements_container {
-	height: 150px;
 	background-color: rgba(140,140,140, 0.3);
 	margin-bottom: 10px;
 }
 
 .high_prio_achievements_container {
-	height: 150px;
 	background-color: rgba(140,140,140, 0.3);
 	margin-bottom: 10px;
 }
 
+.high_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 125px; 
+	height: 125px; 
+	border-radius: 50%; 
+	position: relative; 
+	top: 20%; 
+	right: 2%; 
+	z-index: 1; 
+	padding: 0px;
+}
+
+.medium_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 125px; 
+	height: 125px; 
+	border-radius: 50%; 
+	position: relative; 
+	top: 10%; 
+	right: 2%; 
+	z-index: 1; 
+	padding: 0px;
+}
+
+.low_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 125px; 
+	height: 125px; 
+	border-radius: 50%; 
+	position: relative; 
+	top: 10%; 
+	right: 2%; 
+	z-index: 1; 
+	padding: 0px;
+}
+
+.emblem_image {
+	height: 125px; 
+	width: 125px;
+}
 .arrow_container {
 	float: left;	
 	width: 8px; 
@@ -66,19 +107,23 @@
     border-left-style: solid;
     border-left-color: #26A7DE;
     left: 8px;
-    top: 38%;
+    top: 45%;
 }
 
 .low_arrow_container {
 	background-color: #26A7DE;
+	z-index: 1;
 }
 
 .medium_arrow_container {
 	background-color: #00e600;
+	z-index: 1;
 }
 
 .high_arrow_container {
-	background-color: #F58C1F;
+	/*background-color: #F58C1F;*/
+	background-color: rgb(252, 191, 14);
+	z-index: 1;
 }
 
 .low_arrow {
@@ -90,5 +135,6 @@
 }
 
 .high_arrow {
-	border-left-color: #F58C1F;
+	/*border-left-color: #F58C1F;*/
+	border-left-color: rgb(252, 191, 14);
 }

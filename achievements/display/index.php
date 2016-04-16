@@ -9,8 +9,7 @@
 	<title>Achievements Page</title>
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
-
+	
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -23,36 +22,46 @@
 
 		<div class="container">
 
-			<div class="row high_prio_achievements_container">
-				<div class="arrow_container high_arrow_container">
+			<div class="row high_prio_achievements_container" id="high_prio_container_1">
+				<div class="arrow_container high_arrow_container hidden-xs">
 					<span class="arrow high_arrow"></span>
 				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a high Prio achievement Title</h3>
+				<div class="col-md-10 achievement_text_container">
+					<h3 class="achievement_title" id="high_prio_title_1">This is a high Prio achievement Title</h3>
 					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="high_prio_text_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+				</div>
+				<div class="col-md-1 high_prio_achievements_image_wrapper"  id="high_prio_image_1">
+					<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
+				</div>
+
+			</div>
+
+			<div class="row high_prio_achievements_container" id="high_prio_container_2">
+				<div class="arrow_container high_arrow_container hidden-xs">
+					<span class="arrow high_arrow"></span>
+				</div>
+				<div class="col-md-10 achievement_text_container" >
+					<h3 class="achievement_title" id="high_prio_title_2">This is a high Prio achievement Title</h3>
+					<br/>
+					<p class="achievement_description" id="high_prio_text_2">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+				</div>
+				<div class="col-md-1 high_prio_achievements_image_wrapper" id="high_prio_image_2">
+					<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
 				</div>
 			</div>
 
-			<div class="row high_prio_achievements_container">
-				<div class="arrow_container high_arrow_container">
+			<div class="row high_prio_achievements_container" id="high_prio_container_3">
+				<div class="arrow_container high_arrow_container hidden-xs">
 					<span class="arrow high_arrow"></span>
 				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a high Prio achievement Title</h3>
+				<div class="col-md-10 achievement_text_container" >
+					<h3 class="achievement_title" id="high_prio_title_3">This is a high Prio achievement Title</h3>
 					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="high_prio_text_3">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
 				</div>
-			</div>
-
-			<div class="row high_prio_achievements_container">
-				<div class="arrow_container high_arrow_container">
-					<span class="arrow high_arrow"></span>
-				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a high Prio achievement Title</h3>
-					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+				<div class="col-md-1 high_prio_achievements_image_wrapper" id="high_prio_image_3">
+					<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
 				</div>
 			</div>
 			
@@ -63,36 +72,45 @@
 		
 		<div class="container">
 
-			<div class="row medium_prio_achievements_container">
-				<div class="arrow_container medium_arrow_container">
+			<div class="row medium_prio_achievements_container" id="medium_prio_container_1">
+				<div class="arrow_container medium_arrow_container hidden-xs">
 					<span class="arrow medium_arrow"></span>
 				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a medium Prio achievement Title</h3>
+				<div class="col-md-10 achievement_text_container" >
+					<h3 class="achievement_title" id="medium_prio_title_1">This is a medium Prio achievement Title</h3>
 					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="medium_prio_text_1">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+				</div>
+				<div class="col-md-1 medium_prio_achievements_image_wrapper" id="medium_prio_image_1">
+					<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
 				</div>
 			</div>
 
-			<div class="row medium_prio_achievements_container">
-				<div class="arrow_container medium_arrow_container">
+			<div class="row medium_prio_achievements_container" id="medium_prio_container_2">
+				<div class="arrow_container medium_arrow_container hidden-xs">
 					<span class="arrow medium_arrow"></span>
 				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a medium Prio achievement Title</h3>
+				<div class="col-md-10 achievement_text_container" >
+					<h3 class="achievement_title" id="medium_prio_title_2">This is a medium Prio achievement Title</h3>
 					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="medium_prio_text_2">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+				</div>
+				<div class="col-md-1 medium_prio_achievements_image_wrapper" id="medium_prio_image_2">
+					<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
 				</div>
 			</div>
 
-			<div class="row medium_prio_achievements_container">
-				<div class="arrow_container medium_arrow_container">
+			<div class="row medium_prio_achievements_container" id="medium_prio_container_3">
+				<div class="arrow_container medium_arrow_container hidden-xs">
 					<span class="arrow medium_arrow"></span>
 				</div>
-				<div class="col-xs-11 achievement_text_container" >
-					<h3 class="achievement_title">This is a medium Prio achievement Title</h3>
+				<div class="col-md-10 achievement_text_container">
+					<h3 class="achievement_title" id="medium_prio_title_3">This is a medium Prio achievement Title</h3>
 					<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="medium_prio_text_3">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+				</div>
+				<div class="col-md-1 medium_prio_achievements_image_wrapper" id="medium_prio_image_3">
+					<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
 				</div>
 			</div>
 		
@@ -103,36 +121,45 @@
 
 		<div class="container">
 
-			<div class="row low_prio_achievements_container">
-					<div class="arrow_container low_arrow_container">
+			<div class="row low_prio_achievements_container" id="low_prio_container_1">
+					<div class="arrow_container low_arrow_container hidden-xs">
 						<span class="arrow low_arrow"></span>
 					</div>
-					<div class="col-xs-11 achievement_text_container" >
-						<h3 class="achievement_title">This is a low Prio achievement Title</h3>
+					<div class="col-md-10 achievement_text_container">
+						<h3 class="achievement_title" id="low_prio_title_1">This is a low Prio achievement Title</h3>
 						<br/>
-					<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					<p class="achievement_description" id="low_prio_text_1">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					</div>
+					<div class="col-md-1 low_prio_achievements_image_wrapper" id="low_prio_image_1">
+						<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
 					</div>
 				</div>
 
-				<div class="row low_prio_achievements_container">
+				<div class="row low_prio_achievements_container" id="low_prio_container_2">
 					<div class="arrow_container low_arrow_container">
 						<span class="arrow low_arrow"></span>
 					</div>
-					<div class="col-xs-11 achievement_text_container" >
-						<h3 class="achievement_title">This is a low Prio achievement Title</h3>
+					<div class="col-md-10 achievement_text_container" >
+						<h3 class="achievement_title" id="low_prio_title_2">This is a low Prio achievement Title</h3>
 						<br/>
-						<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+						<p class="achievement_description" id="low_prio_text_2">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					</div>
+					<div class="col-md-1 low_prio_achievements_image_wrapper" id="low_prio_image_2">
+						<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
 					</div>
 				</div>
 
-				<div class="row low_prio_achievements_container">
+				<div class="row low_prio_achievements_container" id="low_prio_container_3">
 					<div class="arrow_container low_arrow_container">
 						<span class="arrow low_arrow"></span>
 					</div>
-					<div class="col-xs-11 achievement_text_container" >
-						<h3 class="achievement_title">This is a low Prio achievement Title</h3>
+					<div class="col-md-10 achievement_text_container" >
+						<h3 class="achievement_title" id="low_prio_title_3">This is a low Prio achievement Title</h3>
 						<br/>
-						<p class="achievement_description">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+						<p class="achievement_description" id="low_prio_text_3">This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text This is some sample text</p>
+					</div>
+					<div class="col-md-1 low_prio_achievements_image_wrapper" id="low_prio_image_3">
+						<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
 					</div>
 				</div>
 
@@ -140,8 +167,9 @@
 	</section>
 
 
-<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-<script   src="custom.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="custom.js"></script>
 
 </body>
 </html>
