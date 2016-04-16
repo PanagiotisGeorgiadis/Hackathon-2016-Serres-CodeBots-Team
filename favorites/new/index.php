@@ -1,18 +1,9 @@
-<html>
-	<head>
-		<title>Favorites page</title>
-		<meta name= "viewport" content= "width=device-width, initial-scale=1">
-		<meta charset="UTF-8">
-		<link href="image/favicon.ico" rel="icon" type="image/x-icon"/>
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.1/animate.min.css">
-		<link rel='stylesheet' type='text/css' href='style.css' />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="custom.js"></script>
-	</head>
-	<body>
+<?php
+
+
+require ("../../connection.php");
+require ("../../header/index.php");
+?>
 	<h2>Store your favorite links</h2>
 		<div class="container margin-top animated zoomIn">
 		<a href="/Hackathon-2016-Serres-CodeBots-Team/favorites/edit/"><span  class="fa fa-pencil-square-o" aria-hidden="true">edit your favorite</span></a>
