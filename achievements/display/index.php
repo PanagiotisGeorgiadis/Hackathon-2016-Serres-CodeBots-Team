@@ -16,33 +16,7 @@
 <body>
 
 	<?php 
-		/*$query = "SELECT * FROM categories";
-		$response = mysqli_query($dbc, $query);
-
-		while($row = mysqli_fetch_array($response)){
-			echo "<h2>".$row['category']."</h2>";
-		}*/
 		
-		/*$user_id = 1;
-		$achievement_title = "Run a Marathon";
-		$achievement_description = "I would like to run to a marathon while i am still young";
-		$achievement_prio = "high";
-		$achievement_progress = 64;*/
-
-		/*$user_id = 1;
-		$achievement_title = "Participate in a hackathon";
-		$achievement_description = "I would like to participate in a hackathon while i can still pull allnighters";
-		$achievement_prio = "medium";
-		$achievement_progress = 50;*/
-
-		$user_id = 2;
-		$achievement_title = "Run a Marathon";
-		$achievement_description = "I would like to run to a marathon while i am still young";
-		$achievement_prio = "high";
-		$achievement_progress = 46;
-
-		$query = "INSERT INTO achievements (user_id, achievement_title, achievement_description, achievement_prio, achievement_progress) VALUES ('$user_id', '$achievement_title', '$achievement_description',' $achievement_prio', '$achievement_progress');";
-		mysqli_query($dbc, $query);
 	?>
 
 	<section id="high_priority_achievements">
