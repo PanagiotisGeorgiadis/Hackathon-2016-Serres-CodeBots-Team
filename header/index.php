@@ -4,13 +4,21 @@
 		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<!-- main JS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="../resources/global_js/global.js"></script>
-
+		<script src="custom.js"></script>
+		<!-- main CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="../resources/global_css/global.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- DATEPICKER CALENDAR -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/gcal.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.print.css " rel="stylesheet" type="text/css" /> -->
 
 	</head>
 	<body>
@@ -59,6 +67,9 @@
 									<a href="/RemoveAchievement">Remove Achievements</a>
 								</li>
 							</ul>
+						</li>
+						<li>
+							<a class="navbar-brand" href="../favorites">Favorites</a>
 						</li>
 						<li>
 							<a class="navbar-brand" href="../about">About</a>
