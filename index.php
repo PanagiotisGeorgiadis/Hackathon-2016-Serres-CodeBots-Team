@@ -1,4 +1,5 @@
 ﻿<?php
 
-	Header("Location: home");
+	require("home/index.php") ;
+
  ?>

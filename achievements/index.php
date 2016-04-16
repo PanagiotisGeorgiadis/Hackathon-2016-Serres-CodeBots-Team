@@ -1,10 +1,10 @@
 ﻿<?php
 
-	require("../header/") or die();
+	require("../header/index.php");
 
 
 
 
-	require("../footer/") or die();
+	require("../footer/index.php");
 
 ?>
