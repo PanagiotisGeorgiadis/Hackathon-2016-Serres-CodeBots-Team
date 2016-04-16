@@ -26,15 +26,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//$username = input($_POST["username"]);
 	$email = input($_POST["txtUserEmail"]);
 	//$password = input($_POST["txtUserPass"]);
-	$phone = input($_POST["phone"]);
+	$phone = input($_POST["txtUserPhone"]);
 
 	//invalid 
-		if(empty($_POST["username"])){
+		if(empty($_POST["txtUserFullName"])){
 			$requsername = "You have to put a username";
 			echo $requsername."<br>";
 		}
 		else{
-			$username = input($_POST["username"]);
+			$username = input($_POST["txtUserFullName"]);
 			
 			if($response->num_rows > 0){
 				while($row = $response->fetch_assoc()){
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$reqpassword = "You have to put a password";
 			echo $reqpassword."<br>";
 		}
-			else if($_POST["password"] != $_POST["passwordconf"] ){
+			else if($_POST["passwordconf"] != $_POST["passwordconf"] ){
 			$reqpassword = "Your password wasn't confirm";
 			echo $reqpassword."<br>";
 			}
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$password = input($_POST["txtUserPass"]);
 		
 		
-		if(empty($_POST["phone"]) || !is_numeric($_POST["phone"]) ){
+		if(empty($_POST["txtUserPhone"]) || !is_numeric($_POST["txtUserPhone"]) ){
 			$reqphone = "You have to put a phone";
 			echo $reqphone."<br>";
 		}		

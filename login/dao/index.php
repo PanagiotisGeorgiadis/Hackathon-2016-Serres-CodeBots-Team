@@ -1,7 +1,6 @@
 <?php
 session_start();
-$basedir = realpath(_DIR_);
-include ($basedir . 'db_connection/mysqli_connect.php');
+include ($_SERVER['DOCUMENT_ROOT'] . 'Hackathon-2016-Serres-CodeBots-Team/db_connection/mysqli_connect.php');
 function input($data){
     $data = trim($data);
     $data = stripslashes($data);
@@ -24,9 +23,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			if(($row["email"] == $email) && ($row["password"] == $password)){
 				$_SESSION['user_id'] = $row["user_id"];
 				$isequal = true;
-				echo "success".	$_SESSION['user_id'];
-				header('Location:' . $basedir .'/home/index.php'); 
-				
+				//echo "success".	$_SESSION['user_id'];
+				$url= '../../home/index.php';
+				header('Location:'.$url); 
+				//echo "<script>window.location =".$_SERVER['DOCUMENT_ROOT']."Hackathon-2016-Serres-CodeBots-Team/home/index.php</script>"; 
 			}
 		
 		}
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 ?>
-<html>
+<!-- <html>
 <head>
 </head>
 <body>
@@ -47,4 +47,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <input type="submit">
 </form>
 </body>
-</html>
+</html> -->
