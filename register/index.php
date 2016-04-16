@@ -5,7 +5,7 @@ require ("../header/index.php");
 
 <div class="container">
 	<h2>Register</h2>
-	<form role="form" method="post" action="">
+	<form role="form" method="post" action="dao/index.php">
 		<div class="form-group">
 			<label for="txtUserEmail">Email:</label>
 			<input type="email" class="form-control" id="txtUserEmail"name="txtUserEmail" placeholder="Enter Your Email" required>

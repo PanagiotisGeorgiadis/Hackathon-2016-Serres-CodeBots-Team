@@ -1,6 +1,5 @@
 <?php
-$basedir = realpath(__DIR__);
-include($basedir . '/db_connection/mysqli_connect.php');
+include ($_SERVER['DOCUMENT_ROOT'] . 'Hackathon-2016-Serres-CodeBots-Team/db_connection/mysqli_connect.php');
 function input($data){
     $data = trim($data);
     $data = stripslashes($data);
@@ -24,10 +23,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	//Metablites...
 	//$username = input($_POST["username"]);
-	$email = input($_POST["txtUserEmail"]);
+	//$email = input($_POST["txtUserEmail"]);
 	//$password = input($_POST["txtUserPass"]);
-	$phone = input($_POST["txtUserPhone"]);
-
+	//$phone = input($_POST["txtUserPhone"]);
+	
 	//invalid 
 		if(empty($_POST["txtUserFullName"])){
 			$requsername = "You have to put a username";
@@ -35,9 +34,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 		else{
 			$username = input($_POST["txtUserFullName"]);
-			
 			if($response->num_rows > 0){
-				while($row = $response->fetch_assoc()){
+				while($row = mysqli_fetch_assoc($response)){
 					if($row["username"] == $username){
 						$requsername = "This username already exists";	
 						echo $requsername."<br>";
@@ -45,11 +43,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				}
 			}
 		}
-		if(empty($_POST["password"]) || empty($_POST["passwordconf"])){
+		if(empty($_POST["txtUserPass"]) || empty($_POST["txtUserRePass"])){
 			$reqpassword = "You have to put a password";
 			echo $reqpassword."<br>";
 		}
-			else if($_POST["passwordconf"] != $_POST["passwordconf"] ){
+			else if($_POST["txtUserPass"] != $_POST["txtUserRePass"] ){
 			$reqpassword = "Your password wasn't confirm";
 			echo $reqpassword."<br>";
 			}
@@ -57,13 +55,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$password = input($_POST["txtUserPass"]);
 		
 		
-		if(empty($_POST["txtUserPhone"]) || !is_numeric($_POST["txtUserPhone"]) ){
+		if(/*empty( $_POST["txtUserPhone"]) || */ !is_numeric($_POST["txtUserPhone"]) ){
 			$reqphone = "You have to put a phone";
 			echo $reqphone."<br>";
 		}		
 		else{
-			if($response->num_rows > 0){
+			$phone = input($_POST["txtUserPhone"]);
+				echo "ok...";
+			if($response->num_rows > 0){	
+				echo "after if...";
 					while($row = $response->fetch_assoc()){
+						echo "while...";
 						if($row["phone"] == $phone){
 							$reqphone = "This phone already exists";
 							echo $reqphone."<br>";
@@ -72,12 +74,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				}
 		}
 		
-		if(empty($_POST["email"])){
+		/* if(empty($_POST["txtUserEmail"])){
 			$reqemail = "You have to put a email";
 			echo $reqemail."<br>";
-		}
-		else{
+		} */
+		
+			
 			if($response->num_rows > 0){
+					$email = input($_POST["txtUserEmail"]);
 					while($row = $response->fetch_assoc()){
 						if($row["email"] == $email){
 							$reqemail = "This email already exists";
@@ -85,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 						}
 					}
 				}
-		}
+		
 		//Define insert query
 		$new_user_query = "INSERT INTO users(username,password,email,phone,rank) VALUES ('".$username."','".$password."','".$email."','".$phone."','0');";
 		$new_user_response = mysqli_query($dbc, $new_user_query); 
@@ -100,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 ?>
-
+<!--
 <html>
 <head>
 </head>
@@ -114,4 +118,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <input type="submit">
 </form>
 </body>
-</html>
+</html> -->
