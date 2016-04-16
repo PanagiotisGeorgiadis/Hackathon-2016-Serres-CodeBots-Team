@@ -1,0 +1,4 @@
+﻿<?php
+
+	Header("Location: home");
+ ?>
