@@ -13,57 +13,35 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-	<div class="container margin-top">
-		<form action = "dao/index.php" method = "POST">
-
-			<div class="form-group">
-				<label for="favorite-link">Add your favorite url link or img</label>
-				<input type="input" name= "link-input" class="form-control" id="link-input" placeholder="Link">
-			</div>
-
-			<div class="form-group">
-				<label for="favorite-description">Add a description for your link</label>
-
-				<textarea class="form-control" rows="2"></textarea>
-			</div>
-
-			<div class="form-group">
-				<label for="upload">Upload File</label>
-				<input type="file" name="upload-link"  id="upload">
-			</div>
-
-
-			<div id = "rating">
-				<p><label for="rate-it">rate it</label></p>
-				<span class="fa fa-star fa-2x rate-star" id="star1" aria-hidden="true"></span>
-				<span class="fa fa-star fa-2x rate-star" id="star2" aria-hidden="true"></span>
-				<span class="fa fa-star fa-2x rate-star" id="star3" aria-hidden="true"></span>
-				<span class="fa fa-star fa-2x rate-star" id="star4" aria-hidden="true"></span>
-				<span class="fa fa-star fa-2x rate-star" id="star5" aria-hidden="true"></span>
-			</div>
+<br><br>
+<a href=""></a>
+<div class = "container">
+	<?php 
 
 
 
-			<button type="submit" name="favorite" class="btn btn-default">Submit</button>
-		</form>
- 
+	$query = mysql_query("SELECT * FROM favorites ORDER BY time DESC");
+
+	while ($rows = mysql_fetch_array($query)) {
+
+		$path = $rows['link'];
+		$description = $rows ['description'];	
+
+		
+		echo "<div class ='col-md-5' id = 'favorite-boxes'>";
+			echo  '<a href = '.$path.' target= "_BLANK" > '.$path. '</a>' ;
+			echo "<hr>";
+
+			echo  '<p>'.$description.'</p>' ;
+		echo "</div>";
+
+	
 
 
+	}
 
+	?>	
 
-
-
-
- <?php 
-
-/*	if (isset($_POST['favorite'])){
-
-		$value = $_POST["upload"];
-		echo $value;
-
-	}*/
- ?>
-	</div>
+</div>
 </body>
 </html>
