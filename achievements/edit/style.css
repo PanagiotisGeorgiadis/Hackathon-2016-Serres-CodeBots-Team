@@ -1,0 +1,9 @@
+﻿textarea {
+	resize: none;
+}
+
+.superscript {
+	vertical-align: super;
+	font-size: small;
+	color: red;
+}
