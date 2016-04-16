@@ -19,7 +19,6 @@
 .achievement_title {	
 	margin: 0;
 	padding-top: 15px;
-
 }
 
 .achievement_description {
@@ -167,6 +166,13 @@
 	border-left-color: rgb(252, 191, 14);
 }
 
+.action_buttons {
+	float: left;
+	bottom: 0px;
+	display: inline;
+	margin-right: 5px;
+}
+
 
 @media only screen and (max-width: 768px) {
 	
@@ -190,3 +196,4 @@
 
 
 }
+

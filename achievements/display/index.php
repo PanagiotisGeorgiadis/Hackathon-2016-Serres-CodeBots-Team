@@ -46,8 +46,9 @@
 				</div>				
 				</div>
 				<div class="row high_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
-					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+					<a class="btn btn-success action_buttons" href="#">Display</a>
+					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
+					<a class="btn btn-danger action_buttons" href="#">Delete</a>
 				</div>';
 
 				$counter++;		
@@ -80,8 +81,9 @@
 				</div>
 				</div>
 				<div class="row medium_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
-					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+					<a class="btn btn-success action_buttons" href="#">Display</a>
+					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
+					<a class="btn btn-danger action_buttons" href="#">Delete</a>
 				</div><br/><br/><br/>';
 
 				$counter++;		
@@ -114,8 +116,9 @@
 					</div>
 				</div>
 				<div class="row low_prio_achievements_footer" style="margin-top:0px;">
-					<a class="btn btn-success" style="float: left; bottom: 0px; display: inline;">Display Achievement</a>
-					<a class="btn btn-danger" style="float: left; bottom: 0px; display: inline; margin-left: 5px;">Delete</a>
+					<a class="btn btn-success action_buttons" href="#">Display</a>
+					<a class="btn btn-warning action_buttons" href="../edit/index.php">Edit</a>
+					<a class="btn btn-danger action_buttons" href="#">Delete</a>
 				</div>';
 
 				$counter++;		
