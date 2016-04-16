@@ -1,1 +1,35 @@
-h2 { color: lightblue; }
+a {
+	color: #F58C1F;
+}
+a:visited {
+	color: #F58C1F;
+}
+a:hover {
+	color: #F58C1F;
+}
+a:active {
+	color: #F58C1F;
+}
+
+.headerFooter {
+	background-color: #26A7DE;
+	color: white;
+}
+.headerFooter a {
+	color: white !important;
+}
+.dropdown-menu {
+	background-color: #26A7DE;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+	background-color: #F58C1F;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+	text-decoration: none;
+	background-color: #F58C1F;
+}
+
+.ourBlueBack{background-color: #26A7DE;}
+.ourOrangeBack{background-color: #F58C1F;}
+.ourBlueColor{color: #26A7DE;}
+.ourOrangeColor{color: #F58C1F;}

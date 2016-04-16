@@ -1,6 +1,6 @@
 <?php
 
-require ("home/index.php");
+require ("../header/index.php");
 ?>
 
 <div class="container">
@@ -8,17 +8,17 @@ require ("home/index.php");
 	<form role="form" method="post" action="_login.php">
 		<div class="form-group">
 			<label for="txtUserEmail">Email:</label>
-			<input type="email" class="form-control" id="txtUserEmail"name="txtUserEmail" placeholder="Enter email">
+			<input type="email" class="form-control" id="txtUserEmail"name="txtUserEmail" placeholder="Enter email" required>
 		</div>
 		<div class="form-group">
 			<label for="txtUserPass">Password:</label>
-			<input type="password" class="form-control" id="txtUserPass" name="txtUserPass" placeholder="Enter password">
+			<input type="password" class="form-control" id="txtUserPass" name="txtUserPass" placeholder="Enter password" required>
 		</div>
 		<div class="checkbox">
 			<label>
 				<input type="checkbox" id="cbxRememberUser">
 				Remember me</label>
-			<a href="/Register" class="pull-right">SIGN UP</a>
+			<a href="../register" class="pull-right">SIGN UP</a>
 		</div>
 		<button type="submit" class="btn btn-default" id="btnSubmit">
 			Submit
@@ -28,5 +28,5 @@ require ("home/index.php");
 
 <?php
 
-require ("footer/index.php");
+require ("../footer/index.php");
 ?>

@@ -1,14 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="/Hackathon-2016-Serres-CodeBots-Team/resources/global_css/global.css">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script type="text/javascript" src="/Hackathon-2016-Serres-CodeBots-Team/resources/global_js/global.js"></script>
-</head>
-<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../resources/global_js/global.js"></script>
 
-<nav class="navbar navbar-default">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="../resources/global_css/global.css">
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default headerFooter">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -16,7 +23,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/Home">Home</a>
+					<a class="navbar-brand" href="../home">Home</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
@@ -53,16 +60,16 @@
 								</li>
 							</ul>
 						</li>
-						<li class="active">
-							<a href="/About">About</a>
+						<li>
+							<a class="navbar-brand" href="../about">About</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="/Login"><span class="glyphicon glyphicon-log-in" ></span> Login</a>
+							<a href="../login"><span class="glyphicon glyphicon-log-in" ></span> Login</a>
 						</li>
 						<li class="hidden">
-							<a href="/Logout"><span class="glyphicon glyphicon-log-out" ></span> Logout</a>
+							<a href="../logout"><span class="glyphicon glyphicon-log-out" ></span> Logout</a>
 						</li>
 					</ul>
 				</div>

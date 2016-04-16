@@ -1,4 +1,4 @@
-﻿<footer class="container-fluid text-center">
+﻿<footer class="container-fluid text-center headerFooter">
 	<p>
 		Copyright   CodeBots 2016
 	</p>
