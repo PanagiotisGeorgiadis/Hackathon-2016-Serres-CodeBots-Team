@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ($_SERVER['DOCUMENT_ROOT'] . 'Hackathon-2016-Serres-CodeBots-Team/db_connection/mysqli_connect.php');
 function input($data){
     $data = trim($data);
@@ -18,23 +19,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($response->num_rows > 0){
 		while($row = mysqli_fetch_array($response)){
 	//Username Valid
-			if(strcasecmp($row['username'],$_POST['txtUserFullName']) == 0)
-					$errmsg = "This username already exists <br>";
+			if(strcasecmp($row['username'],$_POST['txtUserFullName']) == 0){
+				$errmsg = "This username already exists <br>";
+				$_SESSION['errmsg'] = "This username already exists";
+			}
 				else{
 				$username = $_POST['txtUserFullName'];
 			}
 	//Email Valid		
-			if(strcasecmp($row['email'],$_POST['txtUserEmail']) == 0)
-					$errmail = "This email already exists <br>";
-			
+			if(strcasecmp($row['email'],$_POST['txtUserEmail']) == 0){
+				$errmail = "This email already exists <br>";
+				$_SESSION['errmail'] = "This email already exists ";
+			}
 			else{
 				$email = $_POST['txtUserEmail'];
 			}
 	//Phone Valid
-			if(strcasecmp($row['phone'], $_POST['txtUserPhone']) == 0)
+			if(strcasecmp($row['phone'], $_POST['txtUserPhone']) == 0){
 				$errphone = "This phone already exists <br>";
-			else if(!is_numeric($_POST['txtUserPhone']))
+				$_SESSION['errphone']= "This phone already exists ";
+			}
+			else if(!is_numeric($_POST['txtUserPhone'])){
 				$errphone = "This is not a phone number <br>";
+				$_SESSION['errphone'] ="This is not a phone number ";
+			}
 			else{
 				$phone = $_POST['txtUserPhone'];
 			}
@@ -46,6 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//Password Valid
 	if(strcasecmp($_POST['txtUserPass'], $_POST['txtUserRePass'])){
 		$errpass = "Your confirm password not matching <br>";
+		$_SESSION['errpass'] = "Your confirm password not matching <br>";
 	}
 	else{
 		$password = $_POST['txtUserPass'];
@@ -68,6 +77,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		else
 			echo "Error: " .$new_user_query. "<br>" . $dbc->error;
 	}
+	else
+		header('Location: ../index.php');
 }
 
 ?>

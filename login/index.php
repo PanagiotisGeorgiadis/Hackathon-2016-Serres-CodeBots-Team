@@ -1,10 +1,18 @@
 <?php
-require ("../header/index.php");
-
+session_start();
+require('header.php');
+if(isset($_SESSION['error_login']))
+	$errmsg = $_SESSION['error_login'];
+else
+	$errmsg = "";
+	session_destroy();
 ?>
 
 <div class="container">
 	<h2>Login</h2>
+	<?php
+		echo $errmsg;
+	?>
 	<form role="form" method="post" action="dao/index.php">
 		<div class="form-group">
 			<label for="txtUserEmail">Email:</label>

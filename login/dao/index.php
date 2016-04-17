@@ -25,13 +25,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$isequal = true;
 				//echo "success".	$_SESSION['user_id'];
 				$url= '../../home/index.php';
-				header('Location:'.$url); 
+					header('Location: '.$url); 
 				//echo "<script>window.location =".$_SERVER['DOCUMENT_ROOT']."Hackathon-2016-Serres-CodeBots-Team/home/index.php</script>"; 
 			}
 		
 		}
-		if($isequal == false)
-				echo "Fail";
+		if($isequal == false){
+			$_SESSION["error_login"]= "Your email or your password was not correct";
+			header('Location: ../index.php');
+		}
 	}	
 	
 }
