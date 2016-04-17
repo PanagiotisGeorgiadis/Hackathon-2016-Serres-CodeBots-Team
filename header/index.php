@@ -69,17 +69,17 @@
 							<a class="navbar-brand" href="/Hackathon-2016-Serres-CodeBots-Team/todos">Todo's</a>
 						</li>
 						<!-- achievements -->
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Achievements <span class="caret"></span></a>
-							<ul class="dropdown-menu">
 								<li>
-									<a href="/Hackathon-2016-Serres-CodeBots-Team/achievements">Add Achievements</a>
+									<a class="navbar-brand" href="/Hackathon-2016-Serres-CodeBots-Team/achievements/display">Achievements</a>
 								</li>
+						
 								<li>
-									<a href="/Hackathon-2016-Serres-CodeBots-Team/RemoveAchievement">Remove Achievements</a>
+									<a  class="navbar-brand" href="/Hackathon-2016-Serres-CodeBots-Team/achievements/new">Add Achievements</a>
 								</li>
-							</ul>
-						</li>
+								
+							
+							
+						
 						<!-- favorites -->
 						<li>
 
