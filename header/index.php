@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,10 +49,10 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Calendar<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="/AddReminder">Add Reminder</a>
+									<a href="../AddReminder">Add Reminder</a>
 								</li>
 								<li>
-									<a href="/RemoveReminder">Remove Reminder</a>
+									<a href="../RemoveReminder">Remove Reminder</a>
 								</li>
 							</ul>
 						</li>
@@ -71,10 +71,10 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Achievements <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="/AddAchievement">Add Achievements</a>
+									<a href="../achievements">Add Achievements</a>
 								</li>
 								<li>
-									<a href="/RemoveAchievement">Remove Achievements</a>
+									<a href="../RemoveAchievement">Remove Achievements</a>
 								</li>
 							</ul>
 						</li>
