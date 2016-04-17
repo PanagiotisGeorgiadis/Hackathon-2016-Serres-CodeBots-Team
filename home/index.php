@@ -1,13 +1,7 @@
 ﻿<?php
 
 require ("../header/index.php");
-
-
 ?>
-
-
-
-
 
     <div class="container" >
 
@@ -84,3 +78,4 @@ require ("../header/index.php");
 	<?php
 	require ("../footer/index.php");
 	?>
+
