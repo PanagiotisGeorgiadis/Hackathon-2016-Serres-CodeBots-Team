@@ -73,6 +73,7 @@
 			}
 		}
 
+		
 	?>
 
 	<form method="post" action="dao/index.php">
@@ -102,24 +103,28 @@
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center " id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>
-				<select class="form-control" id="achievement_priority" name="achievement_priority">
+
 					<?php 
 
-						if( strcmp($achievement_priority, "Low") ) {
+						if( strlen ( $achievement_priority ) == 5 ) {//strcmp($achievement_priority, "High") == 0 ) {
 							echo "
-								<option value='Low' selected='selected'>Low</option>
+								<select class='form-control' id='achievement_priority' name='achievement_priority'>								
+								<option value='High' selected='selected'>High</option>
 								<option value='Medium'>Medium</option>
-								<option value='High'>High</option>";
-						} else if ( strcmp($achievement_priority, "Medium") ) {
+								<option value='Low'>Low</option>";
+						} else if ( strlen ( $achievement_priority ) == 7 ) {
 							echo "
+								<select class='form-control' id='achievement_priority' name='achievement_priority'>	
+								<option value='Medium' select='selected'>Medium</option>
+								<option value='High'>High</option>
 								<option value='Low'>Low</option>
-								<option value='Medium' selected='selected'>Medium</option>
-								<option value='High'>High</option>";
-						} else if ( strcmp($achievement_priority, "High") ) {
+								";
+						} else if ( ( strlen ( $achievement_priority ) == 4 ) ) {
 							echo "
-								<option value='Low'>Low</option>
-								<option value='Medium'>Medium</option>
-								<option value='High' selected='selected'>High</option>";
+								<select class='form-control' id='achievement_priority' name='achievement_priority'>					
+								<option value='Low' select='selected'>Low</option>
+								<option value='High'>High</option>								
+								<option value='Medium'>Medium</option>";
 						} else {
 							echo "
 								<option value='Low'>Low</option>

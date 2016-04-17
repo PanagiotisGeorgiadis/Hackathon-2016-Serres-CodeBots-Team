@@ -22,7 +22,13 @@
 	*/
 
 	$user_id = 1;
-	$achievement_id = 1;
+	
+	if(isset($_POST["achievement_id"])) {
+		$achievement_id = $_POST["achievement_id"];
+	} else {
+		returnToEditAchievement();
+		die();
+	}
 
 
 	if(isset($_POST["achievement_title"])) {
