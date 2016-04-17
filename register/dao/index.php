@@ -7,115 +7,67 @@ function input($data){
     return $data;
 }
 
-$username=$password=$email=$phone="";
-$requsername=$reqpassword=$reqemail=$reqphone="";
+$username=$password=$passwordconf=$email=$phone="";
+$errmsg=$errmail=$errphone=$errpass="";
+$uservalid=$passvalid=$emailvalid=$phonevalid = false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	//Define query
+	$select_query="SELECT* FROM users";
+	$response = mysqli_query($dbc, $select_query);
 	
-	//Define select queries
-	$query = "SELECT * FROM users;";
-	$response = mysqli_query($dbc, $query);
-	/* while($row = mysqli_fetch_array($response)){
-		//edw perneis tous users 
-	} */
-		
-	//mysqli_fetch_assoc();
-	
-	
-	//Metablites...
-	//$username = input($_POST["username"]);
-	//$email = input($_POST["txtUserEmail"]);
-	//$password = input($_POST["txtUserPass"]);
-	//$phone = input($_POST["txtUserPhone"]);
-	
-	//invalid 
-		if(empty($_POST["txtUserFullName"])){
-			$requsername = "You have to put a username";
-			echo $requsername."<br>";
-		}
-		else{
-			$username = input($_POST["txtUserFullName"]);
-			if($response->num_rows > 0){
-				while($row = mysqli_fetch_assoc($response)){
-					if($row["username"] == $username){
-						$requsername = "This username already exists";	
-						echo $requsername."<br>";
-					}
-				}
+	if($response->num_rows > 0){
+		while($row = mysqli_fetch_array($response)){
+	//Username Valid
+			if(strcasecmp($row['username'],$_POST['txtUserFullName']) == 0)
+					$errmsg = "This username already exists <br>";
+				else{
+				$username = $_POST['txtUserFullName'];
 			}
-		}
-		if(empty($_POST["txtUserPass"]) || empty($_POST["txtUserRePass"])){
-			$reqpassword = "You have to put a password";
-			echo $reqpassword."<br>";
-		}
-			else if($_POST["txtUserPass"] != $_POST["txtUserRePass"] ){
-			$reqpassword = "Your password wasn't confirm";
-			echo $reqpassword."<br>";
-			}
-		else
-			$password = input($_POST["txtUserPass"]);
-		
-		
-		if(/*empty( $_POST["txtUserPhone"]) || */ !is_numeric($_POST["txtUserPhone"]) ){
-			$reqphone = "You have to put a phone";
-			echo $reqphone."<br>";
-		}		
-		else{
-			$phone = input($_POST["txtUserPhone"]);
-				echo "ok...";
-			if($response->num_rows > 0){	
-				echo "after if...";
-					while($row = $response->fetch_assoc()){
-						echo "while...";
-						if($row["phone"] == $phone){
-							$reqphone = "This phone already exists";
-							echo $reqphone."<br>";
-						}
-					}
-				}
-		}
-		
-		/* if(empty($_POST["txtUserEmail"])){
-			$reqemail = "You have to put a email";
-			echo $reqemail."<br>";
-		} */
-		
+	//Email Valid		
+			if(strcasecmp($row['email'],$_POST['txtUserEmail']) == 0)
+					$errmail = "This email already exists <br>";
 			
-			if($response->num_rows > 0){
-					$email = input($_POST["txtUserEmail"]);
-					while($row = $response->fetch_assoc()){
-						if($row["email"] == $email){
-							$reqemail = "This email already exists";
-							echo $reqemail."<br>";
-						}
-					}
-				}
-		
-		//Define insert query
-		$new_user_query = "INSERT INTO users(username,password,email,phone,rank) VALUES ('".$username."','".$password."','".$email."','".$phone."','0');";
-		$new_user_response = mysqli_query($dbc, $new_user_query); 
-		
-		if($requsername =="" && $reqpassword=="" && $reqemail =="" && $reqphone==""){
-			if($new_user_response == true)
-				echo "New record created successfully";
-			else
-				echo "Error: " .$new_user_query. "<br>" . $dbc->error;	
+			else{
+				$email = $_POST['txtUserEmail'];
+			}
+	//Phone Valid
+			if(strcasecmp($row['phone'], $_POST['txtUserPhone']) == 0)
+				$errphone = "This phone already exists <br>";
+			else if(!is_numeric($_POST['txtUserPhone']))
+				$errphone = "This is not a phone number <br>";
+			else{
+				$phone = $_POST['txtUserPhone'];
+			}
+			
 		}
 		
+	}
+	
+	//Password Valid
+	if(strcasecmp($_POST['txtUserPass'], $_POST['txtUserRePass'])){
+		$errpass = "Your confirm password not matching <br>";
+	}
+	else{
+		$password = $_POST['txtUserPass'];
+	}
+	
+	echo "Errors: ". $errmsg .  $errmail . $errphone . $errpass;
+	echo $username . "," . $password . ",". $email.",".$phone;
+	
+	//Insert query
+	$new_user_query = "INSERT INTO users(username,password,email,phone,rank) VALUES ('".$username."','".$password."','".$email."','".$phone."','0');";
+	
+	
+	if($errmsg == "" && $errmail == "" && $errphone == "" && $errpass ==""){
+		$new_user_response = mysqli_query($dbc, $new_user_query);
+		if($new_user_response == true){
+			//echo "New record created successfully";
+		 	$url= '../../login/index.php';
+				header('Location:'.$url); 
+		}
+		else
+			echo "Error: " .$new_user_query. "<br>" . $dbc->error;
+	}
 }
 
 ?>
-<!--
-<html>
-<head>
-</head>
-<body>
-<form action="<?php echo ($_SERVER["PHP_SELF"]);?>" method="post">
-<input type="text" name="username"><br>
-<input type="password" name="password"><br>
-<input type="password" name="passwordconf"><br>
-<input type="text" name="email"><br>
-<input type="text" name="phone"><br>
-<input type="submit">
-</form>
-</body>
-</html> -->
