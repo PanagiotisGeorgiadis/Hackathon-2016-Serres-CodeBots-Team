@@ -38,7 +38,7 @@
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($high_achievements_response)) {
 
-				echo '<div class="row high_prio_achievements_container" id="high_prio_container_'.$counter.'">
+				echo '<div class="row high_prio_achievements_container animated slideInLeft" id="high_prio_container_'.$counter.'">
 				<div class="arrow_container high_arrow_container hidden-xs">					
 					<span class="arrow high_arrow" id="high_arrow_'.$counter.'"></span>
 				</div>				
@@ -47,27 +47,45 @@
 					<br/>
 					<p class="achievement_description" id="high_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
 
-				</div>
-				<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 high_prio_achievements_image_wrapper"  id="high_prio_image_'.$counter.'">
-					<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
-				</div>				
-				</div>
-				<div class="row high_prio_achievements_footer" style="margin-top:0px;">
-					<div class="form_container">
-						<form method="post" action="../display/index.php">
-							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
-							<input type="submit" value="Display" class="btn btn-success action_buttons">
-						</form>
-						<form method="post" action="../edit/index.php">
-							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
-							<input type="submit" value="Edit" class="btn btn-warning action_buttons">
-						</form>
-						<form method="post" action="../delete/dao/index.php">
-							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
-							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
-						</form>
-					</div>
 				</div>';
+
+					if( $row['achievement_progress'] < 100 ) {
+
+						echo '
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 high_prio_achievements_image_wrapper rotate_progress_bar" id="high_prio_image_'.$counter.'" data-progress="'.$row["achievement_progress"].'"">
+								<h2 class="progress_text">'.$row["achievement_progress"].'%</h2>								
+							</div>
+						';
+
+					} else {
+
+						echo'
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 high_prio_achievements_image_wrapper"  id="high_prio_image_'.$counter.'" data-progress="0" style="border: none;">
+								<img class="emblem_image" src="../../resources/emblem_gold_transparent.png">
+							</div>				
+							';
+					}
+
+					echo '
+						</div>
+						<div class="row high_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
+							<div class="form_container">
+								<form method="post" action="../display/index.php">
+									<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+									<input type="submit" value="Display" class="btn btn-success action_buttons">
+								</form>
+								<form method="post" action="../edit/index.php">
+									<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+									<input type="submit" value="Edit" class="btn btn-warning action_buttons">
+								</form>
+								<form method="post" action="../delete/dao/index.php">
+									<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
+									<input type="submit" value="Delete" class="btn btn-danger action_buttons">
+								</form>
+							</div>
+						</div>';
+
+				
 
 				$counter++;		
 		}
@@ -85,7 +103,7 @@
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($medium_achievements_response)) {
 
-				echo '<div class="row medium_prio_achievements_container" id="medium_prio_container_'.$counter.'">
+				echo '<div class="row medium_prio_achievements_container animated slideInLeft" id="medium_prio_container_'.$counter.'">
 				<div class="arrow_container medium_arrow_container hidden-xs">					
 					<span class="arrow medium_arrow" id="medium_arrow_'.$counter.'"></span>
 				</div>
@@ -93,12 +111,27 @@
 					<h3 class="achievement_title" id="medium_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
 					<br/>
 					<p class="achievement_description" id="medium_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+				</div>';
+				
+				if( $row['achievement_progress'] < 100 ) {
+
+					echo '
+						<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 medium_prio_achievements_image_wrapper rotate_progress_bar" id="medium_prio_image_'.$counter.'" data-progress="'.$row["achievement_progress"].'"">
+							<h2 class="progress_text">'.$row["achievement_progress"].'%</h2>								
+						</div>
+						';
+
+				} else {
+
+					echo'
+						<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 medium_prio_achievements_image_wrapper"  id="medium_prio_image_'.$counter.'" data-progress="0" style="border: none;">
+							<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
+						</div>				
+						';
+				}
+				echo'
 				</div>
-				<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 medium_prio_achievements_image_wrapper" id="medium_prio_image_'.$counter.'">
-					<img class="emblem_image" src="../../resources/emblem_silver_transparent.png">
-				</div>
-				</div>
-				<div class="row medium_prio_achievements_footer" style="margin-top:0px;">
+				<div class="row medium_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
 					<div class="form_container">
 						<form method="post" action="../display/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
@@ -132,7 +165,7 @@
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($low_achievements_response)) {
 
-				echo '<div class="row low_prio_achievements_container" id="low_prio_container_'.$counter.'">
+				echo '<div class="row low_prio_achievements_container animated slideInLeft" id="low_prio_container_'.$counter.'">
 					<div class="arrow_container low_arrow_container hidden-xs">
 						<span class="arrow low_arrow" id="low_arrow_'.$counter.'"></span>
 					</div>
@@ -140,12 +173,26 @@
 						<h3 class="achievement_title" id="low_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
 						<br/>
 					<p class="achievement_description" id="low_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
-					</div>
-					<div class="col-md-1 low_prio_achievements_image_wrapper" id="low_prio_image_'.$counter.'">
-						<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
-					</div>
+					</div>';
+					if( $row['achievement_progress'] < 100 ) {
+
+					echo '
+						<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 low_prio_achievements_image_wrapper rotate_progress_bar" id="low_prio_image_'.$counter.'" data-progress="'.$row["achievement_progress"].'"">
+							<h2 class="progress_text">'.$row["achievement_progress"].'%</h2>								
+						</div>
+						';
+
+				} else {
+
+					echo'
+						<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 low_prio_achievements_image_wrapper"  id="low_prio_image_'.$counter.'" data-progress="0" style="border: none;">
+							<img class="emblem_image" src="../../resources/emblem_bronze_transparent.png">
+						</div>				
+						';
+				}
+				echo'
 				</div>
-				<div class="row low_prio_achievements_footer" style="margin-top:0px;">
+				<div class="row low_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
 					<div class="form_container">
 						<form method="post" action="../display/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
