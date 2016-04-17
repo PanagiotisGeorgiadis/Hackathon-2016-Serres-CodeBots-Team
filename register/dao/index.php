@@ -52,34 +52,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	
 	echo "Errors: ". $errmsg .  $errmail . $errphone . $errpass;
-	echo "Data: ". $username . " , " . $email. " , ". $phone. " , ". $password;
-	
+	echo $username . "," . $password . ",". $email.",".$phone;
 	
 	//Insert query
 	$new_user_query = "INSERT INTO users(username,password,email,phone,rank) VALUES ('".$username."','".$password."','".$email."','".$phone."','0');";
 	
 	
-	if($errmsg != "" && $errmail != "" && $errphone != "" && $errpass !=""){
+	if($errmsg == "" && $errmail == "" && $errphone == "" && $errpass ==""){
 		$new_user_response = mysqli_query($dbc, $new_user_query);
-		if($new_user_response == true)
-			echo "New record created successfully";
+		if($new_user_response == true){
+			//echo "New record created successfully";
+		 	$url= '../../login/index.php';
+				header('Location:'.$url); 
+		}
 		else
 			echo "Error: " .$new_user_query. "<br>" . $dbc->error;
 	}
 }
 
 ?>
-<html>
-<head>
-</head>
-<body>
-<form action="<?php echo ($_SERVER["PHP_SELF"]);?>" method="post">
-<input type="text" name="username"><br>
-<input type="password" name="password"><br>
-<input type="password" name="passwordconf"><br>
-<input type="text" name="email"><br>
-<input type="text" name="phone"><br>
-<input type="submit">
-</form>
-</body>
-</html>
