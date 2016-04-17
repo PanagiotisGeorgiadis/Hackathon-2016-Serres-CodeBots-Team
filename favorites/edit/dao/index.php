@@ -20,7 +20,7 @@
 
 	if (isset($_POST['dlt'])){
 
-		$id = $_POST["id"];
+		$id = $_POST["hdn_ctrlID"];
 		$updatequery = mysql_query("DELETE FROM favorites  WHERE id = '$id'");	
 		header('Location: http://localhost/Hackathon-2016-Serres-CodeBots-Team/favorites/edit');	
 	}

@@ -16,11 +16,7 @@
 			$query = mysql_query("INSERT INTO favorites (userID,link,description,tag,rate,time,name,password) VALUES ('$logeduser' ,'$url','$description','$tag','$rate', CURRENT_TIMESTAMP,'$name','$password')");
 			header('Location: http://localhost/Hackathon-2016-Serres-CodeBots-Team/favorites/new');
 		}
-		else{
-			echo "nop";
-		}
+	
 }
-else{
-	echo "string";
-}
+
 ?>
