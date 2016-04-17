@@ -3,17 +3,10 @@
 	require("../header/index.php");
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
+
 	<title>Achievements Page</title>
 
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
 
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 
 	<section id="high_priority_achievements">
 

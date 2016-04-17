@@ -1,0 +1,13 @@
+.favorites-display{
+	border-bottom: 2px solid #F58C1F;
+}
+.favorites-display li{
+	list-style: none;
+
+}
+textarea{
+	resize:none;
+}
+.margin-top{
+	margin-top: 10px;
+}
