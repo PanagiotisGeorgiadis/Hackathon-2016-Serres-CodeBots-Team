@@ -1,0 +1,24 @@
+textarea{
+	resize:none;
+}
+.margin-top{
+	margin-top: 200px;
+}
+#rating{
+	margin: 20px 10px;
+}
+.rate-star:hover{
+	color: #F58C1F;
+	cursor: pointer;
+
+}
+.rate-star:hover{
+	color: #F58C1F;
+	cursor: pointer;
+
+}
+.rate-star{
+	color: #26A7DE;
+	cursor: pointer;
+
+}

@@ -1,1 +1,89 @@
-﻿
+﻿#high_priority_achievements {
+
+}
+
+#medium_priority_achievements {
+
+}
+
+#low_priority_achievements {
+
+}
+
+.achievement_text_container {
+	text-align: center;
+}
+
+.achievement_text {	
+	margin: 0;
+	padding-top: 35px;
+
+}
+
+.low_prio_achievements_container {
+	height: 100px;
+	background-color: rgba(140,140,140, 0.3);
+	margin-bottom: 10px;
+}
+
+.medium_prio_achievements_container {
+	height: 100px;
+	background-color: rgba(140,140,140, 0.3);
+	margin-bottom: 10px;
+}
+
+.high_prio_achievements_container {
+	height: 100px;
+	background-color: rgba(140,140,140, 0.3);
+	margin-bottom: 10px;
+}
+
+.arrow_container {
+	float: left;	
+	width: 8px; 
+	height: 100px;
+}
+
+.arrow {
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0.20em;
+    display: -moz-inline-box;
+    display: inline-block;    /* Use font-size to control the size of the arrow. */
+    font-size: 100px;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 0;
+    background-color: transparent;   /* change background color acc to bg color */ 
+    border-left-width: 0.2em;
+    border-left-style: solid;
+    border-left-color: #26A7DE;
+    left: 8px;
+    top: 30%;
+}
+
+.low_arrow_container {
+	background-color: #26A7DE;
+}
+
+.medium_arrow_container {
+	background-color: #00e600;
+}
+
+.high_arrow_container {
+	background-color: #F58C1F;
+}
+
+.low_arrow {
+	border-left-color: #26A7DE;
+}
+
+.medium_arrow {
+	border-left-color: #00e600;
+}
+
+.high_arrow {
+	border-left-color: #F58C1F;
+}

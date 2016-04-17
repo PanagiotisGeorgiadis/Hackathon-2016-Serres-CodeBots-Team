@@ -22,6 +22,7 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default headerFooter">
+
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<!-- btn that Toggles navbar in small resolutions -->
@@ -30,7 +31,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+
 					<a class="navbar-brand" href="../home">Home</a>
+
 				</div>
 				<!-- Main Navigation Bar -->
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -70,15 +73,18 @@
 						<!-- about -->
 						<li>
 							<a class="navbar-brand" href="../about">About</a>
+
 						</li>
 					</ul>
 					<!-- user login/logout -->
 					<ul class="nav navbar-nav navbar-right">
 						<li>
+
 							<a href="../login"><span class="glyphicon glyphicon-log-in" ></span> Login</a>
 						</li>
 						<li class="hidden">
 							<a href="../logout"><span class="glyphicon glyphicon-log-out" ></span> Logout</a>
+
 						</li>
 					</ul>
 				</div>

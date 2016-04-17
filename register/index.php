@@ -5,7 +5,7 @@ require ("../header/index.php");
 
 <div class="container">
 	<h2>Register</h2>
-	<form role="form" method="post" action="">
+	<form role="form" method="post" action="dao/index.php">
 		<div class="form-group">
 			<label for="txtUserEmail">Email:</label>
 			<input type="email" class="form-control" id="txtUserEmail"name="txtUserEmail" placeholder="Enter Your Email" required>
@@ -25,6 +25,7 @@ require ("../header/index.php");
 		<div class="form-group">
 			<label for="txtUserPhone">Phone:</label>
 			<input class="form-control" id="txtUserPhone" name="txtUserPhone" placeholder="Enter Your Phone Number" required>
+
 		</div>
 		<div class="form-group">
 			<div class="radio">
@@ -44,7 +45,9 @@ require ("../header/index.php");
 	</form>
 </div>
 
+
 <?php
 
 require ("../footer/index.php");
+
 ?>

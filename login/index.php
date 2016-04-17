@@ -1,11 +1,11 @@
 <?php
-
 require ("../header/index.php");
+
 ?>
 
 <div class="container">
 	<h2>Login</h2>
-	<form role="form" method="post" action="_login.php">
+	<form role="form" method="post" action="dao/index.php">
 		<div class="form-group">
 			<label for="txtUserEmail">Email:</label>
 			<input type="email" class="form-control" id="txtUserEmail"name="txtUserEmail" placeholder="Enter email" required>
@@ -29,4 +29,5 @@ require ("../header/index.php");
 <?php
 
 require ("../footer/index.php");
+
 ?>
