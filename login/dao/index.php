@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ($_SERVER['DOCUMENT_ROOT'] . 'Hackathon-2016-Serres-CodeBots-Team/db_connection/mysqli_connect.php');
+include ('../../../Hackathon-2016-Serres-CodeBots-Team/db_connection/mysqli_connect.php');
 function input($data){
     $data = trim($data);
     $data = stripslashes($data);
