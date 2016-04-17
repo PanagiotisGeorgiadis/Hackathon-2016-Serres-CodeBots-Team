@@ -7,7 +7,11 @@
 require ("../../connection.php");
 require ("../../header/index.php");
 
-		$query = mysql_query("SELECT * FROM favorites");
+	if(isset($_SESSION['user_id'])) {
+		$logeduser  = $_SESSION['user_id'];
+	}
+
+	$query = mysql_query("SELECT * FROM favorites WHERE userID = '$logeduser'");
 		
 
 		

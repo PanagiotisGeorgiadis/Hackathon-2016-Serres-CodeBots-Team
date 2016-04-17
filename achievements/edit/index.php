@@ -2,7 +2,7 @@
 
 	require("../../header/index.php");
 	require("../../db_connection/mysqli_connect.php");
-	session_start();
+
 
 
 	$warning_div_class = "container alert alert-danger hidden";

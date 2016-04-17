@@ -24,6 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$_SESSION['user_id'] = $row["user_id"];
 				$isequal = true;
 				//echo "success".	$_SESSION['user_id'];
+			/*	$_SESSION['user_id'];*/
 				$url= '../../home/index.php';
 				header('Location:'.$url); 
 				//echo "<script>window.location =".$_SERVER['DOCUMENT_ROOT']."Hackathon-2016-Serres-CodeBots-Team/home/index.php</script>"; 

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 	<head>
 
@@ -91,13 +93,23 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
+							<?php 
+								
+								session_start();
+							 	
+							 	if (isset($_SESSION['user_id'])) {
+							 		$logeduser  = $_SESSION['user_id'];							 		
+							 		echo '<a href="http://localhost/Hackathon-2016-Serres-CodeBots-Team/header/logout.php"><span class="glyphicon glyphicon-log-out" ></span> Logout</a>';
+							 	}
+							 	else{
+							 		echo '<a href="http://localhost/Hackathon-2016-Serres-CodeBots-Team/login/index.php"><span class="glyphicon glyphicon-log-in" ></span> Login</a>';
 
-							<a href="../login"><span class="glyphicon glyphicon-log-in" ></span> Login</a>
+							 	}
+							 ?>
+							
+							
 						</li>
-						<li class="hidden">
-							<a href="../logout"><span class="glyphicon glyphicon-log-out" ></span> Logout</a>
-
-						</li>
+					
 					</ul>
 				</div>
 			</div>

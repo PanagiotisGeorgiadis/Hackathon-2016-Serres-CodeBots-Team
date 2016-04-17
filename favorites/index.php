@@ -1,5 +1,9 @@
 <?php require ("../connection.php"); ?>
-<?php require ("../header/index.php"); ?>
+<?php require ("../header/index.php"); 
+
+$logeduser  = $_SESSION['user_id'];
+
+?>
 
 
 <br><br>
@@ -20,17 +24,17 @@
 	
 	<?php 
 	if (isset($_POST['rateOrder'])) {
-		$query = mysql_query("SELECT * FROM favorites ORDER BY rate DESC");
+		$query = mysql_query("SELECT * FROM favorites WHERE userID = '$logeduser' ORDER BY rate DESC ");
 	}
 	elseif (isset($_POST['tagOrder'])) {
-		$query = mysql_query("SELECT * FROM favorites ORDER BY tag ASC");
+		$query = mysql_query("SELECT * FROM favorites WHERE userID = '$logeduser' ORDER BY tag ASC");
 	}
 	elseif(isset($_POST['timeOrder'])){
-		$query = mysql_query("SELECT * FROM favorites ORDER BY time ASC");
+		$query = mysql_query("SELECT * FROM favorites WHERE userID = '$logeduser' ORDER BY time ASC");
 
 	}
 	else{
-		$query = mysql_query("SELECT * FROM favorites ORDER BY rate DESC");
+		$query = mysql_query("SELECT * FROM favorites WHERE userID = '$logeduser' ORDER BY rate DESC");
 
 	}
 

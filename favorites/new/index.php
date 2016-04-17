@@ -3,6 +3,8 @@
 
 require ("../../connection.php");
 require ("../../header/index.php");
+$logeduser  = $_SESSION['user_id'];
+echo $logeduser;
 ?>
 	<h2>Store your favorite links</h2>
 		<div class="container margin-top animated zoomIn">
