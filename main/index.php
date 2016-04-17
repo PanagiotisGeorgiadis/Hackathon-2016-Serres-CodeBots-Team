@@ -70,22 +70,30 @@
 		}
 				
 
-		$high_achievements_query = "SELECT * FROM achievements WHERE user_id = 1 AND achievement_prio LIKE '%High%'";
+		$high_achievements_query = "SELECT * FROM achievements WHERE achievement_prio LIKE '%High%' ORDER BY achievement_id DESC LIMIT 3";
 		$high_achievements_response = mysqli_query($dbc, $high_achievements_query);
 
-		echo '<section id="high_priority_achievements">
+		echo ' <div class="row" id="bordered_achievement_wrapper" >
+				<div class="col-md-offset-1 col-md-4" id="achievements_first_level_container">
+			<section id="high_priority_achievements">
 				
 					<div class="row">					
-					<div class="col-md-offset-1 col-md-4 text-center"><h2 class="animated zoomIn"><span id="high_prio_title"> High Priority Achievements! </span></h2></div></div><br/><br/>
+						<div class="col-md-12 text-center">
+							<h2 class="animated zoomIn">
+								<span id="high_prio_title"> 
+									Global High Priority Achievements! 
+								</span>
+							</h2>
+						</div>
+						<br/><br/>
 					</div>';
-
 
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($high_achievements_response)) {
 
 				echo '
 				<div class="row">
-					<div class="col-md-offset-1 col-md-4">
+					<div class=" col-md-12">
 						<div class="row high_prio_achievements_container animated slideInLeft" id="high_prio_container_'.$counter.'">
 						<div class="arrow_container high_arrow_container hidden-xs">					
 							<span class="arrow high_arrow" id="high_arrow_'.$counter.'"></span>
@@ -119,15 +127,140 @@
 						
 
 					</div>
-					</div>';
-
-					
+					</div>';					
 
 				$counter++;		
 		}
 
 		echo '
 			</section><br/><br/><br/>';
+
+
+		$medium_achievements_query = "SELECT * FROM achievements WHERE achievement_prio LIKE '%Medium%' ORDER BY achievement_id DESC";
+		$medium_achievements_response = mysqli_query($dbc, $medium_achievements_query);
+
+		echo '<section id="medium_priority_achievements">
+				
+					<div class="row">					
+					<div class="col-md-12 text-center"><h2 class="animated zoomIn"><span id="medium_prio_title"> Global Medium Priority Achievements! </span></h2></div><br/><br/>
+					</div>';
+
+		$counter = 1;		
+		while( $row = mysqli_fetch_array($medium_achievements_response)) {
+
+				echo '
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row medium_prio_achievements_container animated slideInLeft" id="medium_prio_container_'.$counter.'">
+						<div class="arrow_container medium_arrow_container hidden-xs">					
+							<span class="arrow medium_arrow" id="medium_arrow_'.$counter.'"></span>
+						</div>				
+						<div class="col-md-9 achievement_text_container text-center">
+							<h3 class="achievement_title" id="medium_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
+							<br/>
+							<p class="achievement_description" id="medium_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+
+						</div>';
+
+					if( $row['achievement_progress'] < 100 ) {
+
+						echo '
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2 medium_prio_achievements_image_wrapper rotate_progress_bar" id="medium_prio_image_'.$counter.'" data-progress="'.$row["achievement_progress"].'"">
+								<h2 class="progress_text">'.$row["achievement_progress"].'%</h2>								
+							</div>
+						';
+
+					} else {
+
+						echo'
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 medium_prio_achievements_image_wrapper"  id="medium_prio_image_'.$counter.'" data-progress="0" style="border: none;">
+								<img class="emblem_image" src="../resources/emblem_gold_transparent.png">
+							</div>				
+							';
+					}
+
+					echo '
+						</div>
+						
+
+					</div>
+					</div>';					
+
+				$counter++;		
+		}
+
+		echo '
+			</section><br/><br/><br/>';
+
+		$low_achievements_query = "SELECT * FROM achievements WHERE achievement_prio LIKE '%Low%' ORDER BY achievement_id DESC  LIMIT 3";
+		$low_achievements_response = mysqli_query($dbc, $low_achievements_query);
+
+		echo '<section id="low_priority_achievements">
+				<div class="row">					
+					<div class="col-md-12 text-center">
+						<h2 class="animated zoomIn">
+							<span id="low_prio_title"> 
+								Global Low Priority Achievements! 
+							</span>
+						</h2>
+					</div>
+					<br/><br/>
+				</div>';
+
+		$counter = 1;		
+		while( $row = mysqli_fetch_array($low_achievements_response)) {
+
+				echo '
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row low_prio_achievements_container animated slideInLeft" id="low_prio_container_'.$counter.'">
+						<div class="arrow_container low_arrow_container hidden-xs">					
+							<span class="arrow low_arrow" id="low_arrow_'.$counter.'"></span>
+						</div>				
+						<div class="col-md-9 achievement_text_container text-center">
+							<h3 class="achievement_title" id="low_prio_title_'.$counter.'">'.$row["achievement_title"].'</h3>
+							<br/>
+							<p class="achievement_description" id="low_prio_text_'.$counter.'">'.$row["achievement_description"].'</p>
+
+						</div>';
+
+					if( $row['achievement_progress'] < 100 ) {
+
+						echo '
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2 low_prio_achievements_image_wrapper rotate_progress_bar" id="low_prio_image_'.$counter.'" data-progress="'.$row["achievement_progress"].'"">
+								<h2 class="progress_text">'.$row["achievement_progress"].'%</h2>								
+							</div>
+						';
+
+					} else {
+
+						echo'
+							<div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-1 low_prio_achievements_image_wrapper"  id="low_prio_image_'.$counter.'" data-progress="0" style="border: none;">
+								<img class="emblem_image" src="../resources/emblem_gold_transparent.png">
+							</div>				
+							';
+					}
+
+					echo '
+					</div>
+						
+
+					</div>
+				</div>';					
+
+				$counter++;		
+		}
+
+		echo '
+			</section>
+
+			</div> <!-- First Level col-md-4 col-md-offset-1 closing -->
+			</div> <!-- First Level row div closing -->
+			</div>
+			</div>
+			<br/><br/><br/>';
+
+
 
 	?>
 				

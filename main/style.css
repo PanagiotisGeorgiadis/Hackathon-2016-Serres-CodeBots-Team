@@ -56,10 +56,12 @@
 
 .low_prio_achievements_container {
 	background-color: rgba(140,140,140, 0.3);
+	margin-top: 15px;
 }
 
 .medium_prio_achievements_container {
 	background-color: rgba(140,140,140, 0.3);
+	margin-top: 15px;
 }
 
 .high_prio_achievements_container {
@@ -219,6 +221,14 @@
 	margin-right: 5px;
 }
 
+#footer {
+	position: initial !important;
+}
+
+#achievements_first_level_container {
+	border-right: 3px solid #26A7DE;
+	padding-right: 50px;
+}
 
 @media only screen and (max-width: 768px) {
 	
@@ -245,5 +255,15 @@
 		margin: auto;
 	}
 
+	#achievements_first_level_container {
+		border-right: 3px solid rgb(252, 191, 14);
+		padding-right: 50px;
+		display: none;
+	}
+
+}
+
+body {
+	overflow-x: hidden;
 }
 
