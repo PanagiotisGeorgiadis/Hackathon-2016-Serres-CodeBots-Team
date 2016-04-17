@@ -76,13 +76,13 @@
 		
 	?>
 
-	<form method="post" action="dao/index.php">
+	<div class="row text-center"><h3> Edit your Achievement! </h3></div><br/><br/><br/>
+	<div class=<?php echo "'".$warning_div_class."'"; ?> >
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
+		<h4 class="text-center"> <?php echo $warning_message ?> </h4>
+	</div>
 
-		<div class="row text-center"><h3> Edit your Achievement! </h3></div><br/><br/><br/>
-		<div class=<?php echo "'".$warning_div_class."'"; ?> >
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
-			<h4 class="text-center"> <?php echo $warning_message ?> </h4>
-		</div>
+	<form method="post" action="dao/index.php">		
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_title_div" style="margin-bottom:8px;">
 				<label for="achievement_title">Achievement Title <span class="superscript">*</span></label>

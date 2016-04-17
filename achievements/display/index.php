@@ -2,6 +2,21 @@
 
 	require("../../header/index.php");
 	require("../../db_connection/mysqli_connect.php");
+
+	session_start();
+
+
+	$warning_div_class = "container alert alert-danger hidden";
+	$warning_message = "";
+	
+	if(isset($_SESSION['warning_div_class'])){
+		$warning_div_class = $_SESSION['warning_div_class'];
+	}
+	if(isset($_SESSION['warning_message'])){
+		$warning_message = $_SESSION['warning_message'];
+	}
+
+	session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +28,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+	<div class=<?php echo "'".$warning_div_class."'"; ?> >
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
+		<h4 class="text-center"> <?php echo $warning_message ?> </h4>
+	</div>
 
 	<?php 
 
@@ -55,7 +75,7 @@
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Edit" class="btn btn-warning action_buttons">
 						</form>
-						<form method="post" action="../delete/index.php">
+						<form method="post" action="../delete/dao/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
 						</form>
@@ -101,7 +121,7 @@
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Edit" class="btn btn-warning action_buttons">
 						</form>
-						<form method="post" action="../delete/index.php">
+						<form method="post" action="../delete/dao/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
 						</form>
@@ -148,7 +168,7 @@
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Edit" class="btn btn-warning action_buttons">
 						</form>
-						<form method="post" action="../delete/index.php">
+						<form method="post" action="../delete/dao/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
 							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
 						</form>
