@@ -1,7 +1,10 @@
 <?php
 	require ("../../../connection.php");
 
+	 session_start();
+	?>
 
+<?php
 	if (isset($_POST['update'])){
 		$id = $_POST["id"];
 		$link = $_POST["link"];

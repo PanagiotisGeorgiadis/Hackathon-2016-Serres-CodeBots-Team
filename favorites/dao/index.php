@@ -1,5 +1,5 @@
 <?php require ("../../connection.php"); ?>
-<?php require ("../../header/index.php"); ?>
+
 <?php session_start();?>
 <?php 
 	if (isset($_POST['rateOrder'])){

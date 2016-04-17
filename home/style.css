@@ -33,4 +33,4 @@
 }
 .btnUpdate{display:none;margin-top: 5px;}
 .lblEventDescription,.lblEventTitle{word-break:break-all}
-.eventContainer{overflow:auto;max-height:250px;}
+.eventContainer{overflow:auto;max-height:250px; margin-left:10px;width:24% !important; }
