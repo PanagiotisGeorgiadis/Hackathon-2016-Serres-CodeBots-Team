@@ -2,7 +2,6 @@
 
 	require("../../header/index.php");
 	require("../../db_connection/mysqli_connect.php");
-	session_start();
 
 
 	$warning_div_class = "container alert alert-danger hidden";
@@ -10,79 +9,65 @@
 	
 	if(isset($_SESSION['warning_div_class'])){
 		$warning_div_class = $_SESSION['warning_div_class'];
+		unset($_SESSION['warning_div_class']);
 	}
 	if(isset($_SESSION['warning_message'])){
 		$warning_message = $_SESSION['warning_message'];
+		unset($_SESSION['warning_message']);
 	}
 
-	session_destroy();
+	/*
+	if(isset($_SESSION["user_id"])) {
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Achievements Page</title>
+	}
 
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+	if(!isset($_POST["achievement_title"])) {
+		$_POST["achievement_title"] = "DEMO";
+	}
 
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+	if(!isset($_POST["achievement_progress"])) {
+		$_POST["achievement_progress"] = "15";
+	}
 
-	<?php 
+	if(!isset($_POST["achievement_description"])) {
+		$_POST["achievement_description"] = "DEMO";
+	}
 
-		/*
-		if(isset($_SESSION["user_id"])) {
+	if(!isset($_POST["achievement_priority"])) {
+		$_POST["achievement_priority"] = "High";
+	} */
 
-		}
-
-		if(!isset($_POST["achievement_title"])) {
-			$_POST["achievement_title"] = "DEMO";
-		}
-
-		if(!isset($_POST["achievement_progress"])) {
-			$_POST["achievement_progress"] = "15";
-		}
-
-		if(!isset($_POST["achievement_description"])) {
-			$_POST["achievement_description"] = "DEMO";
-		}
-
-		if(!isset($_POST["achievement_priority"])) {
-			$_POST["achievement_priority"] = "High";
-		} */
-
-		if(!isset($_POST["achievement_id"])) {
-			
-			header("Location: ../../index.php");
+	if(!isset($_POST["achievement_id"])) {
 		
-		} else {
+		header("Location: ../../index.php");
+	
+	} else {
 
-			$achievement_id = $_POST["achievement_id"];
+		$achievement_id = $_POST["achievement_id"];
 
-			$query = "SELECT * FROM achievements WHERE achievement_id = '$achievement_id'";
-			$response = mysqli_query($dbc, $query);
-			
-			while ($row = mysqli_fetch_array($response)) {
-
-				$achievement_title = $row["achievement_title"];
-				$achievement_progress = $row["achievement_progress"];
-				$achievement_description = $row["achievement_description"];
-				$achievement_priority = $row["achievement_prio"];
-			}
-		}
-
+		$query = "SELECT * FROM achievements WHERE achievement_id = '$achievement_id'";
+		$response = mysqli_query($dbc, $query);
 		
+		while ($row = mysqli_fetch_array($response)) {
+
+			$achievement_title = $row["achievement_title"];
+			$achievement_progress = $row["achievement_progress"];
+			$achievement_description = $row["achievement_description"];
+			$achievement_priority = $row["achievement_prio"];
+		}
+	}
+
+
 	?>
 
 	<div class="row text-center"><h3> Edit your Achievement! </h3></div><br/><br/><br/>
 	<div class=<?php echo "'".$warning_div_class."'"; ?> >
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
-		<h4 class="text-center"> <?php echo $warning_message ?> </h4>
+		<h4 class="text-center"> <?php echo $warning_message; ?> </h4>
 	</div>
 
 	<form method="post" action="dao/index.php">		
+
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_title_div" style="margin-bottom:8px;">
 				<label for="achievement_title">Achievement Title <span class="superscript">*</span></label>
@@ -103,40 +88,34 @@
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center " id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>
+								<select class='form-control' id='achievement_priority' name='achievement_priority'>								
+
 
 					<?php 
 
 						if( strlen ( $achievement_priority ) == 5 ) {//strcmp($achievement_priority, "High") == 0 ) {
 							echo "
-								<select class='form-control' id='achievement_priority' name='achievement_priority'>								
 								<option value='High' selected='selected'>High</option>
 								<option value='Medium'>Medium</option>
 								<option value='Low'>Low</option>";
 						} else if ( strlen ( $achievement_priority ) == 7 ) {
 							echo "
-								<select class='form-control' id='achievement_priority' name='achievement_priority'>	
 								<option value='Medium' select='selected'>Medium</option>
 								<option value='High'>High</option>
-								<option value='Low'>Low</option>
-								";
+								<option value='Low'>Low</option>";
 						} else if ( ( strlen ( $achievement_priority ) == 4 ) ) {
 							echo "
-								<select class='form-control' id='achievement_priority' name='achievement_priority'>					
 								<option value='Low' select='selected'>Low</option>
 								<option value='High'>High</option>								
 								<option value='Medium'>Medium</option>";
-						} else {
-							echo "
-								<option value='Low'>Low</option>
-								<option value='Medium'>Medium</option>
-								<option value='High'>High</option>";
-						}
+						} 
 					?>
 				</select>
 
 			</div>
 		</div>
 		<br/><br/><br/>
+		<input type="hidden" name="achievement_id" value=<?php echo $achievement_id; ?> />
 		<div class="row">
 			<div class="center-block">
 				<input class="btn btn-primary center-block" id="submit_button" type="submit" name="submit" value="Save Changes">

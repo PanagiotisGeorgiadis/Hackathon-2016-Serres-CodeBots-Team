@@ -82,5 +82,5 @@
 
 	$_SESSION['warning_div_class'] = "container alert alert-success fade in";
 	$_SESSION['warning_message'] = "Achievement Was Successfully Added! Good Luck! ";
-	header("Location: ../index.php");
+	header("Location: ../../display/index.php");
 ?>

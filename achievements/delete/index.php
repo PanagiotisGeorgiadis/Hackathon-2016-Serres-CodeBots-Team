@@ -3,16 +3,6 @@
 	require("../../header/index.php");
 	require("../../db_connection/mysqli_connect.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Achievements Page</title>
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 
 	<?php 
 

@@ -3,8 +3,6 @@
 	require("../../header/index.php");
 	require("../../db_connection/mysqli_connect.php");
 
-	session_start();
-
 
 	$warning_div_class = "container alert alert-danger hidden";
 	$warning_message = "";
@@ -16,18 +14,7 @@
 		$warning_message = $_SESSION['warning_message'];
 	}
 
-	session_destroy();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Achievements Page</title>
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 
 	<div class=<?php echo "'".$warning_div_class."'"; ?> >
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
@@ -126,13 +113,13 @@
 							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
 						</form>
 					</div>
-				</div>
-				';
+				</div>';
 
 				$counter++;		
 		}
 
 		echo '</div>
+
 			</section><br/><br/><br/>';
 
 		$low_achievements_query = "SELECT * FROM achievements WHERE user_id = '$user_id' AND achievement_prio LIKE '%Low%'";
@@ -173,6 +160,7 @@
 							<input type="submit" value="Delete" class="btn btn-danger action_buttons">
 						</form>
 					</div>
+
 				</div>';
 
 				$counter++;		

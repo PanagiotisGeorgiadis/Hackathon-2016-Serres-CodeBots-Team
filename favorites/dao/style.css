@@ -1,0 +1,14 @@
+#favorite-boxes{
+    border: 2px solid #F58C1F;
+    text-align: center;
+    background: #26A7DE;
+    margin: 20px 25px;
+    color: black;
+    font-size: 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#favorite-boxes a{
+  color: black;
+  
+}

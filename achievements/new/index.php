@@ -2,7 +2,7 @@
 
 	require("../../header/index.php");
 
-	session_start();
+	
 
 	$achievement_title = "";
 	$achievement_progress = "";
@@ -14,37 +14,31 @@
 	
 	if(isset($_SESSION['achievement_title'])){
 		$achievement_title = $_SESSION['achievement_title'];
+		unset($_SESSION['achievement_title']);
 	}
 	if(isset($_SESSION['achievement_progress'])){
 		$achievement_progress = $_SESSION['achievement_progress'];
+		unset($_SESSION['achievement_progress']);
 	}
 	if(isset($_SESSION['achievement_description'])){
 		$achievement_description = $_SESSION['achievement_description'];
+		unset($_SESSION['achievement_description']);
 	}
 	if(isset($_SESSION['achievement_priority'])){
 		$achievement_priority = $_SESSION['achievement_priority'];
+		unset($_SESSION['achievement_priority']);
 	}
 
 	if(isset($_SESSION['warning_div_class'])){
 		$warning_div_class = $_SESSION['warning_div_class'];
+		unset($_SESSION['warning_div_class']);
 	}
 	if(isset($_SESSION['warning_message'])){
 		$warning_message = $_SESSION['warning_message'];
+		unset($_SESSION['warning_message']);
 	}
-
-	session_destroy();
-
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Achievements Page</title>
 
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 	<form method="post" action="dao/index.php">
 
 		<div class="row text-center"><h3> Create a new Achievement! </h3></div><br/><br/><br/>
