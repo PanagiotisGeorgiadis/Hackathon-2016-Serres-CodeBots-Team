@@ -4,14 +4,16 @@
 require ("../../connection.php");
 require ("../../header/index.php");
 $logeduser  = $_SESSION['user_id'];
-echo $logeduser;
+
 ?>
 	<h2>Store your favorite links</h2>
-		<div class="container margin-top animated zoomIn">
-		<a href="/Hackathon-2016-Serres-CodeBots-Team/favorites/edit/"><span  class="fa fa-pencil-square-o" aria-hidden="true">edit your favorite</span></a>
- <p></p>
-			<form action = "dao/index.php" method = "POST">
 
+		<div class="container margin-top animated zoomIn">
+		<a href="/Hackathon-2016-Serres-CodeBots-Team/favorites/edit/">
+			<span  class="fa fa-pencil-square-o" aria-hidden="true">edit your favorite</span></a>
+
+			<form action = "dao/index.php" method = "POST">
+	<div class="jumbotron">
 				<div class="form-group">
 					<label for="favorite-link">Add your favorite url link or img</label>
 					<input type="input" name= "link-input" class="form-control" id="link-input" placeholder="Link">
@@ -56,6 +58,7 @@ echo $logeduser;
 
 			<br>
 			<button type="submit" id="submitFavorite" name="favorite" class="btn btn-default">Submit</button>
+			</div>
 			</form>
 	 
 		</div>
