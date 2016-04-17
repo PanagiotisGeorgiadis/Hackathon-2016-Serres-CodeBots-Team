@@ -14,30 +14,6 @@
 
 }
 
-#high_prio_title {
-	background-color: #26A7DE; 
-	color: rgb(252, 191, 14); 
-	padding: 5px; 
-	padding-left: 15px; 
-	padding-right: 15px;
-}
-
-#medium_prio_title {
-	background-color: rgb(101, 146, 30); 
-	color: rgb(255, 255, 255); 
-	padding: 5px; 
-	padding-left: 15px; 
-	padding-right: 15px;
-}
-
-#low_prio_title {
-	background-color: rgb(43, 87, 112); 
-	color: rgb(198, 236, 248); 
-	padding: 5px; 
-	padding-left: 15px; 
-	padding-right: 15px;
-}
-
 .achievement_text_container {
 	text-align: center;
 	z-index: 0;
@@ -81,20 +57,6 @@
 	background-color: rgba(140,140,140, 0.3);
 }
 
-.rotate_progress_bar {
-	-ms-transform: rotate(45deg); /* IE 9 */
-	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-	transform: rotate(45deg);
-}
-
-.progress_text {
-	-ms-transform: rotate(-45deg); /* IE 9 */
-	-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
-	transform: rotate(-45deg);
-	line-height: 50px;
-	text-align: center;
-}
-
 .high_prio_achievements_image_wrapper {
 	float: right; 
 	background-color: white; 
@@ -106,7 +68,6 @@
 	right: 2%; 
 	z-index: 1; 
 	padding: 0px;
-	border: 10px solid transparent;
 }
 
 .medium_prio_achievements_image_wrapper {
@@ -120,14 +81,13 @@
 	right: 2%; 
 	z-index: 1; 
 	padding: 0px;
-	border: 10px solid transparent;
 }
 
 .low_prio_achievements_image_wrapper {
 	float: right; 
 	background-color: white; 
-	width: 130px; 
-	height: 130px;
+	width: 125px; 
+	height: 125px; 
 	border-radius: 50%; 
 	position: relative; 
 	
@@ -135,7 +95,6 @@
 	z-index: 1; 
 	padding: 0;
 	padding-left: 2px;
-	border: 10px solid transparent;
 }
 
 .emblem_image {
@@ -238,7 +197,6 @@
 		margin: auto;
 		margin-bottom: 10px;
 	}
-
 
 	.form_container {
 		margin: auto;

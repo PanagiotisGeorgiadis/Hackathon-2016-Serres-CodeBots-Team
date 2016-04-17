@@ -12,7 +12,7 @@
 		$_SESSION['warning_div_class'] = "container alert alert-danger fade in";
 		$_SESSION['warning_message'] = "Please insert all required fields!";
 
-		header("Location: ../index.php");
+		header("Location: ../../display/");
 	}
 
 	/*
@@ -22,8 +22,15 @@
 	*/
 
 	$user_id = 1;
-	$achievement_id = 1;
+	
+	if(isset($_POST["achievement_id"])) {
+		$achievement_id = $_POST["achievement_id"];
+	} else {
+		returnToEditAchievement();
+		die();
+	}
 
+	echo $achievement_id."<br/>";
 
 	if(isset($_POST["achievement_title"])) {
 		$achievement_title = $_POST["achievement_title"];
@@ -53,6 +60,12 @@
 		die();
 	}
 
+	echo $achievement_id."<br/>";
+	echo $achievement_title."<br/>";
+	echo $achievement_progress."<br/>";
+	echo $achievement_description."<br/>";
+	echo $achievement_priority."<br/>";
+	
 
 	/*$query = "SELECT * FROM categories";
 	$response = mysqli_query($dbc, $query);
@@ -79,11 +92,12 @@
 	$achievement_prio = "high";
 	$achievement_progress = 46;*/
 
-	$query = "UPDATE achivements SET achievement_title='$achievement_title', achievement_progress='$achievement_progress', achievement_description='$achievement_description', achievement_priority='$achievement_priority' WHERE achievement_id = '$achievement_id'";
+	$query = "UPDATE achievements SET achievement_title='$achievement_title', achievement_progress='$achievement_progress', achievement_description='$achievement_description', achievement_prio='$achievement_priority' WHERE achievement_id = '$achievement_id';";
 	mysqli_query($dbc, $query);
 
 	$_SESSION['warning_div_class'] = "container alert alert-success fade in";
 	$_SESSION['warning_message'] = "Achievement was edited successfully!";
-	header("Location: ../index.php");
+	header("Location: ../../display/");
 
+	echo "success";
 ?>

@@ -97,50 +97,6 @@ $(window).load( function () {
 		var high_parent_height = $("#high_prio_container_" + counter ).height();
 		$("#high_prio_container_" + counter + " div:nth-child(1)").height(high_parent_height);		
 
-		
-		//var achievProgressDiv = $("#high_prio_container_" + counter + " div:nth-child(3)");
-		var achievProgress = $("#high_prio_image_" + counter).attr('data-progress');
-		//alert(achievProgress);
-		if (achievProgress > 75 ) {
-
-			$("#high_prio_image_" + counter).css("border-top-width", "100%");
-			$("#high_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			achievProgress = achievProgress - 25;
-
-			if(achievProgress > 50 ) {
-				achievProgress = achievProgress - 25;
-				$("#high_prio_image_" + counter).css("border-right-width", "100%");
-				$("#high_prio_image_" + counter).css("border-right-color", "#26A7DE");
-			}
-
-			if(achievProgress > 25 ) {
-				achievProgress = achievProgress - 25;
-				$("#high_prio_image_" + counter).css("border-bottom-width", "100%");
-				$("#high_prio_image_" + counter).css("border-bottom-color", "#26A7DE");
-			}
-
-			$("#high_prio_image_" + counter).css("border-left-width", (achievProgress*4)+"%");
-			$("#high_prio_image_" + counter).css("border-left-color", "#26A7DE");
-		}
-
-		if (achievProgress > 50 ) {
-
-		}
-
-		if(achievProgress > 25) {
-			$("#high_prio_image_" + counter).css("border-top-width", "100%");
-			$("#high_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			
-			achievProgress = achievProgress - 25;
-			$("#high_prio_image_" + counter).css("border-right-width", (achievProgress*4)+"%");
-			$("#high_prio_image_" + counter).css("border-right-color", "#26A7DE");
-		}
-
-		if(achievProgress < 25 && achievProgress > 0) {			
-			$("#high_prio_image_" + counter).css("border-top-width", (achievProgress*4)+"%");
-			$("#high_prio_image_" + counter).css("border-top-color", "#26A7DE");
-		} 
-
  		counter++;
  	}
 
@@ -150,49 +106,6 @@ $(window).load( function () {
 		var medium_parent_height = $("#medium_prio_container_" + counter ).height();
 		$("#medium_prio_container_" + counter + " div:nth-child(1)").height(medium_parent_height);		
 
-		//var achievProgressDiv = $("#high_prio_container_" + counter + " div:nth-child(3)");
-		var achievProgress = $("#medium_prio_image_" + counter).attr('data-progress');
-		//alert(achievProgress);
-		if (achievProgress > 75 ) {
-
-			$("#medium_prio_image_" + counter).css("border-top-width", "100%");
-			$("#medium_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			achievProgress = achievProgress - 25;
-
-			if(achievProgress > 50 ) {
-				achievProgress = achievProgress - 25;
-				$("#medium_prio_image_" + counter).css("border-right-width", "100%");
-				$("#medium_prio_image_" + counter).css("border-right-color", "#26A7DE");
-			}
-
-			if(achievProgress > 25 ) {
-				achievProgress = achievProgress - 25;
-				$("#medium_prio_image_" + counter).css("border-bottom-width", "100%");
-				$("#medium_prio_image_" + counter).css("border-bottom-color", "#26A7DE");
-			}
-
-			$("#medium_prio_image_" + counter).css("border-left-width", (achievProgress*4)+"%");
-			$("#medium_prio_image_" + counter).css("border-left-color", "#26A7DE");
-		}
-
-		if (achievProgress > 50 ) {
-
-		}
-
-		if(achievProgress > 25) {
-			$("#medium_prio_image_" + counter).css("border-top-width", "100%");
-			$("#medium_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			
-			achievProgress = achievProgress - 25;
-			$("#medium_prio_image_" + counter).css("border-right-width", (achievProgress*4)+"%");
-			$("#medium_prio_image_" + counter).css("border-right-color", "#26A7DE");
-		}
-
-		if(achievProgress < 25 && achievProgress > 0) {			
-			$("#medium_prio_image_" + counter).css("border-top-width", (achievProgress*4)+"%");
-			$("#medium_prio_image_" + counter).css("border-top-color", "#26A7DE");
-		} 
-
  		counter++;
  	}
 
@@ -200,49 +113,7 @@ $(window).load( function () {
 	while ( $("#low_prio_container_" + counter ).length ) {
 
 		var low_parent_height = $("#low_prio_container_" + counter ).height();
- 		$("#low_prio_container_" + counter + " div:nth-child(1)").height(low_parent_height);
-
- 		var achievProgress = $("#low_prio_image_" + counter).attr('data-progress');
-		//alert(achievProgress);
-		if (achievProgress > 75 ) {
-
-			$("#low_prio_image_" + counter).css("border-top-width", "100%");
-			$("#low_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			achievProgress = achievProgress - 25;
-
-			if(achievProgress > 50 ) {
-				achievProgress = achievProgress - 25;
-				$("#low_prio_image_" + counter).css("border-right-width", "100%");
-				$("#low_prio_image_" + counter).css("border-right-color", "#26A7DE");
-			}
-
-			if(achievProgress > 25 ) {
-				achievProgress = achievProgress - 25;
-				$("#low_prio_image_" + counter).css("border-bottom-width", "100%");
-				$("#low_prio_image_" + counter).css("border-bottom-color", "#26A7DE");
-			}
-
-			$("#low_prio_image_" + counter).css("border-left-width", (achievProgress*4)+"%");
-			$("#low_prio_image_" + counter).css("border-left-color", "#26A7DE");
-		}
-
-		if (achievProgress > 50 ) {
-
-		}
-
-		if(achievProgress > 25) {
-			$("#low_prio_image_" + counter).css("border-top-width", "100%");
-			$("#low_prio_image_" + counter).css("border-top-color", "#26A7DE");
-			
-			achievProgress = achievProgress - 25;
-			$("#low_prio_image_" + counter).css("border-right-width", (achievProgress*4)+"%");
-			$("#low_prio_image_" + counter).css("border-right-color", "#26A7DE");
-		}
-
-		if(achievProgress < 25 && achievProgress > 0) {			
-			$("#low_prio_image_" + counter).css("border-top-width", (achievProgress*4)+"%");
-			$("#low_prio_image_" + counter).css("border-top-color", "#26A7DE");
-		} 		
+ 		$("#low_prio_container_" + counter + " div:nth-child(1)").height(low_parent_height);		
 
  		counter++;
  	}
