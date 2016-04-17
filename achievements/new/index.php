@@ -39,7 +39,7 @@
 	}
 ?>
 
-	<form method="post" action="dao/index.php">
+	<form method="post" action="dao/index.php" >
 
 		<div class="row text-center"><h3> Create a new Achievement! </h3></div><br/><br/><br/>
 		<div class=<?php echo "'".$warning_div_class."'"; ?> >
@@ -62,7 +62,7 @@
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_description_div" style="margin-bottom:8px;">
 				<label for="achievement_description">Achievement Description <span class="superscript">*</span></label>
-				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" onblur="validateAchievementDescription(this);" value=<?php echo "'".$achievement_description."'"; ?> required></textarea>
+				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" maxlength="200" onblur="validateAchievementDescription(this);" value=<?php echo "'".$achievement_description."'"; ?> required></textarea>
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center " id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>

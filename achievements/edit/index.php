@@ -39,7 +39,7 @@
 
 	if(!isset($_POST["achievement_id"])) {
 		
-		header("Location: ../../index.php");
+		header("Location: ../../");
 	
 	} else {
 
@@ -56,7 +56,6 @@
 			$achievement_priority = $row["achievement_prio"];
 		}
 	}
-
 
 	?>
 
@@ -84,7 +83,7 @@
 		<div class="container">
 			<div class="col-lg-offset-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-center" id="achievement_description_div" style="margin-bottom:8px;">
 				<label for="achievement_description">Achievement Description <span class="superscript">*</span></label>
-				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" onblur="validateAchievementDescription(this);" required><?php echo "$achievement_description"; ?></textarea>
+				<textarea class="form-control" id="achievement_description" name="achievement_description" placeholder="Well in this achievement I plan on ..." rows="10" maxlength="200" onblur="validateAchievementDescription(this);" required><?php echo "$achievement_description"; ?></textarea>
 			</div>			
 			<div class="col-lg-3 col-md-3 col-xs-12 text-center " id="achievement_priority_div" style="margin-bottom: 8px;">
 				<label for="achievement_priority" required>Priority <span class="superscript">*</span></label><br/>
@@ -93,19 +92,21 @@
 
 					<?php 
 
-						if( strlen ( $achievement_priority ) == 5 ) {//strcmp($achievement_priority, "High") == 0 ) {
+						if( strcmp($achievement_priority, "High") == 0 ) { //strlen ( $achievement_priority ) == 5 ) {//
 							echo "
-								<option value='High' selected='selected'>High</option>
+								<option value='High'>High</option>
 								<option value='Medium'>Medium</option>
 								<option value='Low'>Low</option>";
-						} else if ( strlen ( $achievement_priority ) == 7 ) {
+						
+						} else if ( strcmp($achievement_priority, "Medium") == 0 ) { //strlen ( $achievement_priority ) == 6 ) {
 							echo "
-								<option value='Medium' select='selected'>Medium</option>
+								<option value='Medium'>Medium</option>
 								<option value='High'>High</option>
 								<option value='Low'>Low</option>";
-						} else if ( ( strlen ( $achievement_priority ) == 4 ) ) {
+						
+						} else { //( strlen ( $achievement_priority ) == 3 ) ) {
 							echo "
-								<option value='Low' select='selected'>Low</option>
+								<option value='Low'>Low</option>
 								<option value='High'>High</option>								
 								<option value='Medium'>Medium</option>";
 						} 

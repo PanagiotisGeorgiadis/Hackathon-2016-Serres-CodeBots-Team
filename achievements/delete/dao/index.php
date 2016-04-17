@@ -36,6 +36,6 @@
 
 	$_SESSION['warning_div_class'] = "container alert alert-success fade in";
 	$_SESSION['warning_message'] = "Achievement Deleted Successfully! ";
-	header("Location: ../../display/index.php");
+	header("Location: ../../display");
 
 ?>

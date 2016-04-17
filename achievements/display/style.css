@@ -14,6 +14,30 @@
 
 }
 
+#high_prio_title {
+	background-color: #26A7DE; 
+	color: rgb(252, 191, 14); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
+#medium_prio_title {
+	background-color: rgb(101, 146, 30); 
+	color: rgb(255, 255, 255); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
+#low_prio_title {
+	background-color: rgb(43, 87, 112); 
+	color: rgb(198, 236, 248); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
 .achievement_text_container {
 	text-align: center;
 	z-index: 0;

@@ -33,7 +33,7 @@
 
 		echo '<section id="high_priority_achievements">
 				<div class="container">
-					<div class="text-center"><h2><span style="background-color: #26A7DE; color: rgb(252, 191, 14); padding: 5px; padding-left: 15px; padding-right: 15px;"> High Priority Achievements! </span></h2></div><br/><br/>';
+					<div class="text-center"><h2 class="animated zoomIn"><span id="high_prio_title"> High Priority Achievements! </span></h2></div><br/><br/>';
 
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($high_achievements_response)) {
@@ -98,7 +98,7 @@
 
 		echo '<section id="medium_priority_achievements">
 				<div class="container">
-					<div class="text-center"><h2><span style="background-color: rgb(101, 146, 30); color: rgb(255, 255, 255); padding: 5px; padding-left: 15px; padding-right: 15px;"> Medium Priority Achievements! </span></h2><br/><br/>';
+					<div class="text-center"><h2 class="animated zoomIn"><span id="medium_prio_title"> Medium Priority Achievements! </span></h2><br/><br/>';
 
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($medium_achievements_response)) {
@@ -160,7 +160,7 @@
 
 		echo '<section id="low_priority_achievements">
 				<div class="container">
-					<div class="text-center"><h2><span style="background-color: rgb(43, 87, 112); color: rgb(198, 236, 248); padding: 5px; padding-left: 15px; padding-right: 15px;"> Low Priority Achievements! </span></h2><br/><br/>';
+					<div class="text-center"><h2 class="animated zoomIn"><span id="low_prio_title"> Low Priority Achievements! </span></h2><br/><br/>';
 
 		$counter = 1;		
 		while( $row = mysqli_fetch_array($low_achievements_response)) {

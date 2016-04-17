@@ -12,7 +12,7 @@
 		$_SESSION['warning_div_class'] = "container alert alert-danger fade in";
 		$_SESSION['warning_message'] = "Please insert all required fields!";
 
-		header("Location: ../../display/index.php");
+		header("Location: ../../display/");
 	}
 
 	/*
@@ -97,7 +97,7 @@
 
 	$_SESSION['warning_div_class'] = "container alert alert-success fade in";
 	$_SESSION['warning_message'] = "Achievement was edited successfully!";
-	header("Location: ../../display/index.php");
+	header("Location: ../../display/");
 
 	echo "success";
 ?>
