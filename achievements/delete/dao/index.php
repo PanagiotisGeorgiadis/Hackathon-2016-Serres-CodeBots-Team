@@ -16,18 +16,11 @@
 		header("Location: ../../display/index.php");
 	}
 
-	/*
-	if(isset($_SESSION["user_id"])) {
-
-	}
-	*/
-
-	$user_id = 1;
-	
+		
 	if(isset($_POST["achievement_id"])) {
 		$achievement_id = $_POST["achievement_id"];
 	} else {
-		//returnToEditAchievement();
+		returnToDisplayAchievements();
 		die();
 	}
 

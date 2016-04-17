@@ -15,13 +15,10 @@
 		header("Location: ../index.php");
 	}
 
-	/*
+	
 	if(isset($_SESSION["user_id"])) {
-
-	}
-	*/
-
-	$user_id = 1;
+		$user_id = $_SESSION["user_id"];
+	}	
 
 	if(isset($_POST["achievement_title"])) {
 		$achievement_title = $_POST["achievement_title"];

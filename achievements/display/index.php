@@ -8,9 +8,11 @@
 	
 	if(isset($_SESSION['warning_div_class'])){
 		$warning_div_class = $_SESSION['warning_div_class'];
+		unset($_SESSION['warning_div_class']);
 	}
 	if(isset($_SESSION['warning_message'])){
 		$warning_message = $_SESSION['warning_message'];
+		unset($_SESSION["warning_message"]);
 	}
 
 ?>
@@ -22,10 +24,11 @@
 
 	<?php 
 
-		//$user_id = $_SESSION["user_id"];
-		$user_id = 1;
-
-		
+		if(isset($_SESSION["user_id"])) {
+			
+			$user_id = $_SESSION["user_id"];	
+		}
+				
 
 		$high_achievements_query = "SELECT * FROM achievements WHERE user_id = '$user_id' AND achievement_prio LIKE '%High%'";
 		$high_achievements_response = mysqli_query($dbc, $high_achievements_query);
@@ -68,6 +71,7 @@
 					echo '
 						</div>
 						<div class="row high_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
+							<div class="arrow_container high_arrow_container hidden-xs"><h2 class="footer_padding">A</h2></div>
 							<div class="form_container">
 								<form method="post" action="../display/index.php">
 									<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
@@ -131,6 +135,7 @@
 				echo'
 				</div>
 				<div class="row medium_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
+					<div class="arrow_container medium_arrow_container hidden-xs"><h2 class="footer_padding">A</h2></div>
 					<div class="form_container">
 						<form method="post" action="../display/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">
@@ -192,6 +197,7 @@
 				echo'
 				</div>
 				<div class="row low_prio_achievements_footer animated slideInLeft" style="margin-top:0px;">
+					<div class="arrow_container low_arrow_container hidden-xs"><h2 class="footer_padding">A</h2></div>
 					<div class="form_container">
 						<form method="post" action="../display/index.php">
 							<input type="hidden" name="achievement_id" value="'.$row["achievement_id"].'">

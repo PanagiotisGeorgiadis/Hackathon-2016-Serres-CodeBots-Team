@@ -64,6 +64,7 @@
 
 .high_prio_achievements_container {
 	background-color: rgba(140,140,140, 0.3);
+	margin-top: 15px;
 }
 
 .low_prio_achievements_footer {
@@ -79,12 +80,6 @@
 .high_prio_achievements_footer {
 	margin-bottom: 10px;
 	background-color: rgba(140,140,140, 0.3);
-}
-
-.footer_padding {
-
-	color:transparent; 
-	display: inline;
 }
 
 .rotate_progress_bar {
@@ -221,7 +216,7 @@
 	float: left;
 	bottom: 0px;
 	display: inline;
-	margin-left: 5px;
+	margin-right: 5px;
 }
 
 

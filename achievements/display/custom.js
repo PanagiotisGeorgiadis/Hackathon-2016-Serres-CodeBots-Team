@@ -16,13 +16,17 @@
 	 		$("#high_prio_text_" + counter).css("padding-left", high_parent_width - text_container_width); 		
 
 	 		/* Vertically centering Image */
-	 		if(high_parent_height > 250) {
+	 		/*if(high_parent_height > 250) {
 	 			$("#high_prio_image_" + counter).css("margin-top", (high_parent_height/2.3));
 	 		} else {
 	 			$("#high_prio_image_" + counter).css("margin-top", "1%");
 	 		}
 
-	 		$("#high_arrow_" + counter ).css("top", (high_parent_height/2)-15 );
+	 		$("#high_arrow_" + counter ).css("top", (high_parent_height/2)-15 );*/
+	 		var imageMargin = (high_parent_height - $("#high_prio_image_" + counter).height())/2;
+	 		var arrowMargin = (high_parent_height - $("#high_arrow_" + counter).height())/2;
+	 		$("#high_arrow_" + counter ).css("top", arrowMargin);
+	 		$("#high_prio_image_" + counter).css("margin-top", imageMargin);
 
 	 		counter++; 
 		}
@@ -38,14 +42,20 @@
 	 		$("#medium_prio_title_" + counter).css("padding-left", medium_parent_width - text_container_width);
 	 		$("#medium_prio_text_" + counter).css("padding-left", medium_parent_width - text_container_width); 		
 
-	 		/* Vertically centering Image */
+	 		/* Vertically centering Image 
 	 		if(medium_parent_height > 250) {
 	 			$("#medium_prio_image_" + counter).css("margin-top", (medium_parent_height/2.3));
 	 		} else {
 	 			$("#medium_prio_image_" + counter).css("margin-top", "1%");
 	 		}
 
-	 		$("#medium_arrow_" + counter ).css("top", (medium_parent_height/2)-15 );
+	 		$("#medium_arrow_" + counter ).css("top", (medium_parent_height/2)-15 );*/
+	 		var footerHeight = $("#high_prio_achievements_footer").height();
+	 		var imageMargin = ((medium_parent_height + footerHeight) - $("#medium_prio_image_" + counter).height())/2;
+	 		var arrowMargin = ((medium_parent_height + footerHeight) - $("#medium_arrow_" + counter).height())/2;
+
+	 		$("#medium_arrow_" + counter ).css("top", arrowMargin);
+	 		$("#medium_prio_image_" + counter).css("margin-top", imageMargin);
 
 	 		counter++; 
 		}
@@ -62,14 +72,18 @@
 	 		$("#low_prio_title_" + counter).css("padding-left", low_parent_width - text_container_width);
 	 		$("#low_prio_text_" + counter).css("padding-left", low_parent_width - text_container_width); 		
 
-	 		/* Vertically centering Image */
+	 		/* Vertically centering Image 
 	 		if(low_parent_height > 250) {
 	 			$("#low_prio_image_" + counter).css("margin-top", (low_parent_height/2.3));
 	 		} else {
 	 			$("#low_prio_image_" + counter).css("margin-top", "1%");
 	 		}
 
-	 		$("#low_arrow_" + counter ).css("top", (low_parent_height/2)-15 );
+	 		$("#low_arrow_" + counter ).css("top", (low_parent_height/2)-15 );*/
+	 		var imageMargin = (high_parent_height - $("#low_prio_image_" + counter).height())/2;
+	 		var arrowMargin = (high_parent_height - $("#low_arrow_" + counter).height())/2;
+	 		$("#low_arrow_" + counter ).css("top", arrowMargin);
+	 		$("#low_prio_image_" + counter).css("margin-top", imageMargin);
 
 	 		counter++; 
 		}

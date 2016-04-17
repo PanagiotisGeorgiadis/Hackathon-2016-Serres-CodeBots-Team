@@ -1,1 +1,248 @@
-﻿
+﻿form {
+	display: inline;
+}
+
+#high_priority_achievements {
+
+}
+
+#medium_priority_achievements {
+
+}
+
+#low_priority_achievements {
+
+}
+
+#high_prio_title {
+	background-color: #26A7DE; 
+	color: rgb(252, 191, 14); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
+#medium_prio_title {
+	background-color: rgb(101, 146, 30); 
+	color: rgb(255, 255, 255); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
+#low_prio_title {
+	background-color: rgb(43, 87, 112); 
+	color: rgb(198, 236, 248); 
+	padding: 5px; 
+	padding-left: 15px; 
+	padding-right: 15px;
+}
+
+.achievement_text_container {
+	text-align: center;
+	z-index: 0;
+	word-wrap: break-word;
+}
+
+.achievement_title {	
+	margin: 0;
+	padding-top: 15px;
+}
+
+.achievement_description {
+	/*padding-left: 150px;
+	padding-right: 150px;*/
+}
+
+.low_prio_achievements_container {
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.medium_prio_achievements_container {
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.high_prio_achievements_container {
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.low_prio_achievements_footer {
+	margin-bottom: 10px;
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.medium_prio_achievements_footer {
+	margin-bottom: 10px;
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.high_prio_achievements_footer {
+	margin-bottom: 10px;
+	background-color: rgba(140,140,140, 0.3);
+}
+
+.rotate_progress_bar {
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	transform: rotate(45deg);
+}
+
+.progress_text {
+	-ms-transform: rotate(-45deg); /* IE 9 */
+	-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+	transform: rotate(-45deg);
+	line-height: 50px;
+	text-align: center;
+}
+
+.high_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 125px; 
+	height: 125px; 
+	border-radius: 50%; 
+	position: relative; 
+	
+	right: 2%; 
+	z-index: 1; 
+	padding: 0px;
+	border: 10px solid transparent;
+}
+
+.medium_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 125px; 
+	height: 125px; 
+	border-radius: 50%; 
+	position: relative; 
+	
+	right: 2%; 
+	z-index: 1; 
+	padding: 0px;
+	border: 10px solid transparent;
+}
+
+.low_prio_achievements_image_wrapper {
+	float: right; 
+	background-color: white; 
+	width: 130px; 
+	height: 130px;
+	border-radius: 50%; 
+	position: relative; 
+	
+	right: 2%; 
+	z-index: 1; 
+	padding: 0;
+	padding-left: 2px;
+	border: 10px solid transparent;
+}
+
+.emblem_image {
+	height: 125px; 
+	width: 125px;
+}
+.arrow_container {
+	float: left;	
+	width: 8px; 	
+}
+
+.details_btn {
+	position: relative;
+	z-index: 2;
+	left: 15px;
+	display: inline !important;
+}
+
+.delete_btn {
+	position: relative;
+	z-index: 2;
+	left: 15px;
+	display: inline !important;
+	bottom: 0;
+}
+
+.arrow {
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0.20em;
+    display: -moz-inline-box;
+    display: inline-block;    /* Use font-size to control the size of the arrow. */
+    font-size: 120px; 
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 0;
+    background-color: transparent;   /* change background color acc to bg color */ 
+    border-left-width: 0.2em;
+    border-left-style: solid;
+    border-left-color: #26A7DE;
+    left: 8px;
+    top: 15%;
+}
+
+.low_arrow_container {
+	background-color: #26A7DE;
+	z-index: 1;
+}
+
+.medium_arrow_container {
+	background-color: #00e600;
+	z-index: 1;
+}
+
+.high_arrow_container {
+	/*background-color: #F58C1F;*/
+	background-color: rgb(252, 191, 14);
+	z-index: 1;
+}
+
+.low_arrow {
+	border-left-color: #26A7DE;
+}
+
+.medium_arrow {
+	border-left-color: #00e600;
+}
+
+.high_arrow {
+	/*border-left-color: #F58C1F;*/
+	border-left-color: rgb(252, 191, 14);
+}
+
+.action_buttons {
+	float: left;
+	bottom: 0px;
+	display: inline;
+	margin-right: 5px;
+}
+
+
+@media only screen and (max-width: 768px) {
+	
+	.high_prio_achievements_image_wrapper {
+		float: none;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	
+	.medium_prio_achievements_image_wrapper {
+		float: none;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+
+	.low_prio_achievements_image_wrapper {
+		float: none;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+
+
+	.form_container {
+		margin: auto;
+	}
+
+}
+
