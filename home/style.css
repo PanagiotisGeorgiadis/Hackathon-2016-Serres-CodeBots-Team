@@ -1,17 +1,36 @@
-﻿.info-section{
+﻿.info-section {
 	margin-bottom: 10px;
-
 }
 
-#info-block{
+#info-block {
 	background: #E9EAED;
 }
-#border-sidebar{
+#border-sidebar {
 	border: 1px solid;
 	padding: 10px 10px;
 }
-#footer{
-	position: absolute;
+#footer {
 	bottom: 0px;
 	width: 100%;
 }
+.aboutMeData {
+	margin: 5px;
+	width: 80%;
+}
+.aboutMeData textarea {
+	margin: 5px;
+	background: white;
+	float: left;
+}
+.editMeData {
+	float: left;
+	margin: 5px;
+	width: 15%;
+}
+.textLike {
+	border: none;
+	background: white !important
+}
+.btnUpdate{display:none;margin-top: 5px;}
+.lblEventDescription,.lblEventTitle{word-break:break-all}
+.eventContainer{overflow:auto;max-height:250px;}
